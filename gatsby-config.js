@@ -1,3 +1,10 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+const fetch = require(`isomorphic-fetch`)
+const { createHttpLink } = require(`apollo-link-http`)
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -6,6 +13,23 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-graphql`,
+      options: {
+        typeName: `hasura`,
+        fieldName: `blog`,
+        createLink: () => {
+          return createHttpLink({
+            uri: "https://hasura-heroku-based.herokuapp.com/v1/graphql",
+            headers: {
+              'x-hasura-admin-secret': `${process.env.HASURA_GRAPHQL_ADMIN_SECRET}`,
+            },
+            fetch,
+          })
+        },
+
+      }
+    },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
