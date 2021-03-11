@@ -1,1 +1,1 @@
-export { wrapRootElement } from './utils/apollo.js'
+export { wrapRootElement } from './src/utils/apollo.js'

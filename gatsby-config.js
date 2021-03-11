@@ -1,10 +1,7 @@
 // Initialize dotenv
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`, // or '.env'
+  path: `.env.${process.env.NODE_ENV}`, // in .env.development, NODE_ENV=development gatsby develop
 });
-
-// Then use 'config' for ENV variables here
-const config = require('gatsby-plugin-config').default;
 
 // for options in `gatsby-source-graphql`
 const fetch = require(`isomorphic-fetch`)
@@ -27,12 +24,11 @@ module.exports = {
           return createHttpLink({
             uri: "https://hasura-heroku-based.herokuapp.com/v1/graphql",
             headers: {
-              'x-hasura-admin-secret': `${config.HASURA_GRAPHQL_ADMIN_SECRET}`,
+              'x-hasura-admin-secret': `${process.env.GATSBY_HASURA_GRAPHQL_ADMIN_SECRET}`,
             },
             fetch,
           })
         },
-
       }
     },
     `gatsby-plugin-image`,

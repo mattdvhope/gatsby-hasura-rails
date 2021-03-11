@@ -18,7 +18,7 @@ exports.createPages = async ({ actions: {createPage}, graphql }) => {
 	posts.forEach(post => {
 		createPage({
 			path: `/post/${post.id}/`,
-			component: require.resolve('./templates/post.js'),
+			component: require.resolve('./src/templates/post.js'),
 			context: {
 				id: post.id
 			}
