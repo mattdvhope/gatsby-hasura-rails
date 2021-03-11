@@ -22,7 +22,7 @@ module.exports = {
           return createHttpLink({
             uri: "https://hasura-heroku-based.herokuapp.com/v1/graphql",
             headers: {
-              'x-hasura-admin-secret': `${process.env.HASURA_GRAPHQL_ADMIN_SECRET}`,
+              'x-hasura-admin-secret': `${process.env.GATSBY_HASURA_GRAPHQL_ADMIN_SECRET}`,
             },
             fetch,
           })

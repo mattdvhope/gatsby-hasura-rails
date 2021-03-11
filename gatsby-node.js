@@ -1,7 +1,29 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/node-apis/
- */
+exports.createPages = async ({ actions: {createPage}, graphql }) => {
 
-// You can delete this file if you're not using it
+	const result = await graphql(`
+		{
+			blog {
+				posts {
+					id
+					title
+		    }
+		  }
+		}
+	`);
+
+	// TODO handle errors
+	console.log(result)
+	const posts = result.data.blog.posts;
+
+	posts.forEach(post => {
+		createPage({
+			path: `/post/${post.id}/`,
+			component: require.resolve('./templates/post.js'),
+			context: {
+				id: post.id
+			}
+		})
+
+	})
+
+}
