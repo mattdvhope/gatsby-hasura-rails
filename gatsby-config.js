@@ -1,9 +1,14 @@
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+// Initialize dotenv
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`, // or '.env'
+});
 
+// Then use 'config' for ENV variables here
+const config = require('gatsby-plugin-config').default;
+
+// for options in `gatsby-source-graphql`
 const fetch = require(`isomorphic-fetch`)
-const { createHttpLink } = require(`apollo-link-http`)
+const { createHttpLink } = require(`@apollo/client`)
 
 module.exports = {
   siteMetadata: {
@@ -22,7 +27,7 @@ module.exports = {
           return createHttpLink({
             uri: "https://hasura-heroku-based.herokuapp.com/v1/graphql",
             headers: {
-              'x-hasura-admin-secret': `${process.env.GATSBY_HASURA_GRAPHQL_ADMIN_SECRET}`,
+              'x-hasura-admin-secret': `${config.HASURA_GRAPHQL_ADMIN_SECRET}`,
             },
             fetch,
           })

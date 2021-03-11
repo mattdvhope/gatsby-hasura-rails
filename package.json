@@ -6,9 +6,9 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@apollo/client": "^3.3.11",
-    "apollo-link-http": "^1.5.17",
     "dotenv": "^8.2.0",
     "gatsby": "^3.0.1",
+    "gatsby-plugin-config": "^1.0.7",
     "gatsby-plugin-gatsby-cloud": "^2.0.0",
     "gatsby-plugin-image": "^1.0.0",
     "gatsby-plugin-manifest": "^3.0.0",
