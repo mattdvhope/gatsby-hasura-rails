@@ -4,7 +4,7 @@ import fetch from "isomorphic-fetch";
 // import dotenv from "dotenv";
 
 
-// // This 'dotenv' creates the 'fs' error.  Do whatever it takes to fix dotenv in order to use process.env.... etc...
+// // This 'dotenv' creates the 'fs' error.  Do whatever it takes to fix dotenv in order to use process.env.... etc... maybe GATSBY_ prefix????
 // dotenv.config({
 //   path: `.env.${process.env.NODE_ENV}`,
 // })
