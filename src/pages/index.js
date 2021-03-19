@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import UsersList from "../components/UsersList"
 import AddUser from "../components/AddUser"
 
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
