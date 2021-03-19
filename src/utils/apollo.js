@@ -10,7 +10,7 @@ const cache = new InMemoryCache();
 
 const httpLink = new HttpLink({
 	cache: cache,
-	uri: 'https://hasura-heroku-based.herokuapp.com/v1/graphql',
+	uri: 'https://rails-api-hasura.hasura.app/v1/graphql',
 	headers: {
     'x-hasura-admin-secret': `${process.env.GATSBY_HASURA_GRAPHQL_ADMIN_SECRET}`,
   },
@@ -28,7 +28,7 @@ const wsForNode = typeof window === 'undefined' ? ws : null
 // });
 
 const wsLink = new WebSocketLink({
-	uri: 'wss://hasura-heroku-based.herokuapp.com/v1/graphql',
+	uri: 'wss://rails-api-hasura.hasura.app/v1/graphql',
 	// headers: {
  //    'x-hasura-admin-secret': `${process.env.GATSBY_HASURA_GRAPHQL_ADMIN_SECRET}`,
  //  },

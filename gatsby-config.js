@@ -22,7 +22,8 @@ module.exports = {
         fieldName: `blog`,
         createLink: () => {
           return createHttpLink({
-            uri: "https://hasura-heroku-based.herokuapp.com/v1/graphql",
+            uri: "https://rails-api-hasura.hasura.app/v1/graphql",
+            // uri: "https://hasura-heroku-based.herokuapp.com/v1/graphql",
             headers: {
               'x-hasura-admin-secret': `${process.env.GATSBY_HASURA_GRAPHQL_ADMIN_SECRET}`,
             },
