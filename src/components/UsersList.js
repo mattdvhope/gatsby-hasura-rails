@@ -28,7 +28,7 @@ const UsersList = () => {
   return(
     <ul>
       {data.users.map(user => (
-        <li key={user.id}>{user.id}. {user.username} - email: {user.email}</li>
+        <li key={user.id}>({user.id}) {user.username}</li>
       ))}
     </ul>
   )
