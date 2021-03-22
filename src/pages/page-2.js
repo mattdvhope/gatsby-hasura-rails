@@ -9,6 +9,8 @@ const SecondPage = () => {
 
 	const [name, setName] = useState(null);
 
+	let namely;
+
   useEffect(async () => {
     const url_with_code = window.location.search.match(/(code=)(.*)(?=&state)/)
     const code = url_with_code ? url_with_code[2] : null
@@ -20,7 +22,8 @@ const SecondPage = () => {
     console.log(token);
     console.log(appToken);
     console.log(profile_of_person)
-    
+
+    namely = profile_of_person.first_name
 
   }); // useEffect
 
@@ -29,7 +32,7 @@ const SecondPage = () => {
 	return (
   <Layout>
     <SEO title="Page two" />
-    <h3>Hi {name}, Here is some interesting content for a two or more people to chat about while interacting on this web page.  They won't have to switch back and forth between this page and Facebook Messenger or LINE.  They can have all of their interaction, discipleship, relationship-development, content-sharing, etc, etc, right here on this page!!</h3>
+    <h3>Hi {setName(namely)}, Here is some interesting content for a two or more people to chat about while interacting on this web page.  They won't have to switch back and forth between this page and Facebook Messenger or LINE.  They can have all of their interaction, discipleship, relationship-development, content-sharing, etc, etc, right here on this page!!</h3>
     <UserStuff/>
     <Link to="/">Go back to the homepage</Link>
   </Layout>)
