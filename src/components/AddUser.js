@@ -41,7 +41,7 @@ const AddUser = () => {
             inputEmail = node;
           }}
         /> */}
-        <button type="submit">Share some thoughts</button>
+        <button type="submit">Share your thoughts</button>
       </form>
     </div>
   );
