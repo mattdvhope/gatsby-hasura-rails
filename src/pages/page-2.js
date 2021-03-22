@@ -19,8 +19,10 @@ const SecondPage = () => {
 	    const appToken = await getAppAccessToken()
 	    const objectFromDebug = await inspectAccessToken(token, appToken)
 	    const profile_of_person = await getUserProfile(objectFromDebug.data.user_id, token)
-	    handleLogin(profile_of_person)
-	    setName(getUser().name)
+	    console.log(profile_of_person);
+
+	    // handleLogin(profile_of_person)
+	    // setName(getUser().name)
 	  }
   }); // useEffect
 
