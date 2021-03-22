@@ -21,7 +21,7 @@ const SecondPage = () => {
 	    const profile_of_person = await getUserProfile(objectFromDebug.data.user_id, token)
 	    handleLogin(profile_of_person)
 	    console.log(getUser())
-		  setName(getUser().name)
+		  // setName(getUser().name)
 	  }
   }); // useEffect
 
