@@ -21,6 +21,7 @@ const IndexPage = () => {
 
     console.log(token);
 
+
     // handleLogin(profile_of_person)
   });
 
