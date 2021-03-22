@@ -21,7 +21,7 @@ const SecondPage = () => {
 	    const objectFromDebug = await inspectAccessToken(token, appToken)
 	    const profile_of_person = await getUserProfile(objectFromDebug.data.user_id, token)
 
-	    if (!window.localStorage.getItem("user")) {
+	    if (window.localStorage.getItem("user") === {}) {
 	    	console.log("NOTHING HERE!!!!")
       	setName(profile_of_person.name)
 	    }
