@@ -20,13 +20,13 @@ const SecondPage = () => {
 	    const appToken = await getAppAccessToken()
 	    const objectFromDebug = await inspectAccessToken(token, appToken)
 	    const profile_of_person = await getUserProfile(objectFromDebug.data.user_id, token)
+	    handleLogin(profile_of_person);
 
-	    if (window.localStorage.getItem("user") === {}) {
-	    	console.log("NOTHING HERE!!!!")
+	    if (JSON.parse(window.localStorage.getItem("user")).name) {
+	    	console.log("SOMETHING HERE!!!!")
       	setName(profile_of_person.name)
 	    }
 
-	    handleLogin(profile_of_person);
 
     // }
 
