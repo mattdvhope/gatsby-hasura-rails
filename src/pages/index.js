@@ -17,6 +17,7 @@ const IndexPage = () => {
     console.log(token);
   }); // useEffect
 
+
   return (
     <Layout>
       <SEO title="Home" />
