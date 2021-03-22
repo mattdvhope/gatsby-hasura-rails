@@ -24,9 +24,10 @@ const AddUser = () => {
       <form
         onSubmit={e => {
           e.preventDefault();
-          addUser({ variables: { username: inputUser.value, email: inputEmail.value } });
+          // addUser({ variables: { username: inputUser.value, email: inputEmail.value } });
+          addUser({ variables: { username: inputUser.value } });
           inputUser.value = '';
-          inputEmail.value = '';
+          // inputEmail.value = '';
         }}
       >
         <input
