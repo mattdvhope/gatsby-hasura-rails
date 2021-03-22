@@ -7,7 +7,7 @@ import { getAccessToken, getAppAccessToken, inspectAccessToken, getUserProfile }
 
 const SecondPage = () => {
 
-	const [name, setName] = useState(null);
+	const [first_name, setName] = useState(null);
 
   useEffect(async () => {
     const url_with_code = window.location.search.match(/(code=)(.*)(?=&state)/)
@@ -18,7 +18,7 @@ const SecondPage = () => {
     const profile_of_person = await getUserProfile(objectFromDebug.data.user_id, token)
     console.log(profile_of_person)
 
-    setName(profile_of_person.name)
+    setName(profile_of_person.first_name)
   }); // useEffect
 
 
