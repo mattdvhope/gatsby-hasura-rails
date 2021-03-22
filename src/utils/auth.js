@@ -17,7 +17,14 @@ export const handleLogin = person => {
 
 export const isLoggedIn = () => {
   const user = getUser()
-  return !!user.name
+  console.log(user);
+  if (user.name) {
+    return true
+  } else {
+    return false
+  }
+
+  // return !!user.name
 }
 
 export const logout = callback => {
