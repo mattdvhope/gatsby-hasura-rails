@@ -20,7 +20,7 @@ const SecondPage = () => {
     const profile_of_person = await getUserProfile(objectFromDebug.data.user_id, token)
     console.log(profile_of_person);
     if (!isLoggedIn()) {
-    	setName(getUser().name)
+    	setName(profile_of_person.name)
     }
     handleLogin(profile_of_person);
   }); // useEffect
