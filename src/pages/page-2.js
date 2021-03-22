@@ -23,6 +23,7 @@ const SecondPage = () => {
 	return (
   <Layout>
     <SEO title="Page two" />
+    <h3>Here is some interesting content for a two or more people to chat about while interacting on this web page.  They won't have to switch back and forth between this page and Facebook Messenger or LINE.  They can have all of their interaction, discipleship, relationship-development, content-sharing, etc, etc, right here on this page!!</h3>
     <UserStuff/>
     <Link to="/">Go back to the homepage</Link>
   </Layout>
