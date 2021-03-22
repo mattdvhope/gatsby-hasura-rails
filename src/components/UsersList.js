@@ -28,7 +28,7 @@ const UsersList = ({ FbName }) => {
   return(
     <ul>
       {data.users.map(user => (
-        <li key={user.id}>{user.username} <span style={{ color: `#d4c9c9`, fontSize: `50%` }}>...by {FbName}</span></li>
+        <li key={user.id}>{user.username} <span style={{ color: `#c7b7b7`, fontSize: `60%` }}>...by {FbName}</span></li>
       ))}
     </ul>
   )
