@@ -19,11 +19,10 @@ const SecondPage = () => {
     const objectFromDebug = await inspectAccessToken(token, appToken)
     const profile_of_person = await getUserProfile(objectFromDebug.data.user_id, token)
     console.log(profile_of_person);
-
-    isLoggedIn() ? null : handleLogin(profile_of_person)
-    
-    // !isLoggedIn() ? setName(getUser().name)
-	  
+    if (!isLoggedIn()) {
+    	setName(getUser().name)
+    }
+    handleLogin(profile_of_person);
   }); // useEffect
 
 	return (
