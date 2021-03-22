@@ -1,20 +1,27 @@
 import * as React from "react"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import UsersList from "../components/UsersList"
-import AddUser from "../components/AddUser"
+import UserStuff from "../components/UserStuff"
+import { isLoggedIn, getUser, handleLogin } from "../utils/auth"
+import { FbLoginURL } from "../utils/FbLoginURL"
 
-const IndexPage = () => (
+
+
+const IndexPage = () => {
+  console.log(getUser())
+  return (
   <Layout>
     <SEO title="Home" />
-    <div style={{ margin: `2rem auto`, width: `550px` }}>
-      <AddUser/>
-    </div>
-    <div style={{ margin: `2rem auto`, width: `550px` }}>
-      <UsersList/>
-    </div>
+    { isLoggedIn() ? UserStuff() : <h2>Not yet logged in!!</h2> }
+    <a
+      href={FbLoginURL()}
+    >
+      Facebook Login Link
+    </a>
+
+
+
   </Layout>
-)
+)}
 
 export default IndexPage
