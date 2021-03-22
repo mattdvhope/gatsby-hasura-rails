@@ -15,7 +15,7 @@ const IndexPage = () => {
     const token = await getAccessToken(code)
 
     console.log(token);
-  });
+  }); // useEffect
 
   return (
     <Layout>
