@@ -4,7 +4,7 @@ export const isBrowser = () => typeof window !== "undefined"
 
 export const getUser = () =>
   isBrowser() && window.localStorage.getItem("user")
-    ? JSON.parse(window.localStorage.getItem("user"))
+    ? JSON.parse(window.localStorage.getItem("user")
     : {}
 
 const setUser = user =>
