@@ -17,8 +17,6 @@ export const handleLogin = person => {
 
 export const isLoggedIn = () => {
   const user = getUser()
-
-
   return !!user.name
 }
 
