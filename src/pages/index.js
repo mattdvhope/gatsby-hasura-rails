@@ -19,7 +19,6 @@ const IndexPage = () => {
     console.log(appToken);
   }); // useEffect
 
-
   return (
     <Layout>
       <SEO title="Home" />
