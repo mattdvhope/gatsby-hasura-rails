@@ -24,9 +24,9 @@ const IndexPage = () => {
         version    : 'v10.0' // use version 2.1
       });
 
-      window.FB.getLoginStatus(function(response) {
-        this.statusChangeCallback(response);
-      });
+      // window.FB.getLoginStatus(function(response) {
+      //   this.statusChangeCallback(response);
+      // });
     };
 
     // Load the SDK asynchronously
