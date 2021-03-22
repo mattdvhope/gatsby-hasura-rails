@@ -22,7 +22,7 @@ const SecondPage = () => {
 	    const profile_of_person = await getUserProfile(objectFromDebug.data.user_id, token)
 
 	    if (!window.localStorage.getItem("user")) {
-      	setName(getUser().name)
+      	setName(profile_of_person.name)
 	    }
 
 	    handleLogin(profile_of_person);
