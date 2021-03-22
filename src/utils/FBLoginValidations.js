@@ -4,7 +4,9 @@
 
 export async function getAccessToken(code) {
   const params = `client_id=${process.env.GATSBY_FB_APP_CLIENT_ID}&redirect_uri=${process.env.GATSBY_API_URL}&client_secret=${process.env.GATSBY_FB_APP_SECRET}&code=${code}`;
+console.log("params: ", params)
   const response = await fetch(`https://graph.facebook.com/v7.0/oauth/access_token?${params}`)
+console.log("response: ", response)
   const json = await response.json();
   return json.access_token;
 }
