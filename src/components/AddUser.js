@@ -35,12 +35,12 @@ const AddUser = () => {
             inputUser = node;
           }}
         />
-        <input
+    {/* <input
           name="Email"
           ref={node => {
             inputEmail = node;
           }}
-        />
+        /> */}
         <button type="submit">Share some thoughts</button>
       </form>
     </div>
