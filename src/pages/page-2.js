@@ -18,10 +18,10 @@ const SecondPage = () => {
     const appToken = await getAppAccessToken()
     const objectFromDebug = await inspectAccessToken(token, appToken)
     const profile_of_person = await getUserProfile(objectFromDebug.data.user_id, token)
+    console.log(profile_of_person);
+    handleLogin(profile_of_person)
 
     if (!isLoggedIn()) {
-	    console.log(profile_of_person);
-	    handleLogin(profile_of_person)
 	    setName(getUser().name)
 	  }
 
