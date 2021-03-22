@@ -23,7 +23,6 @@ export const isLoggedIn = () => {
   } else {
     return false
   }
-
   // return !!user.name
 }
 
