@@ -13,8 +13,6 @@ const SecondPage = () => {
   useEffect(async () => {
     if (!isLoggedIn()) {
 	    handleLogin(await GetFbUserProfile());
-	    console.log(getUser())
-	    console.log(JSON.stringify(getUser()))
     	setName(getUser().name)
     }
   }); // useEffect
@@ -23,7 +21,7 @@ const SecondPage = () => {
 	  <Layout>
 	    <SEO title="Page two" />
 	    <h3>Hi {name || getUser().name}!!</h3>
-	    <Dashboard FbUser={JSON.stringify(getUser())}/>
+	    <Dashboard/>
 	    <Link to="/">Go back to the homepage</Link>
 	  </Layout>)
 
