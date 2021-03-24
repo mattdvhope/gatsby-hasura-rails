@@ -19,7 +19,7 @@ const UsersList = () => {
 
   const { loading, error, data } = useSubscription(
     USERS_SUBSCRIPTION,
-    { variables: fb_id }
+    { variables: fb_id, suspend: false }
   );
 
   // const { loading, error, data } = useSubscription(USERS_SUBSCRIPTION, {
