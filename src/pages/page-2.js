@@ -23,7 +23,8 @@ const SecondPage = () => {
 	    <h3>Hi {name || getUser().name}!!</h3>
 	    <Dashboard/>
 	    <Link to="/">Go back to the homepage</Link>
-	  </Layout>)
+	  </Layout>
+	)
 
 }
 
