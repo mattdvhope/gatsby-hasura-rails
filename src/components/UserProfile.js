@@ -25,11 +25,6 @@ const UsersList = () => {
     { variables: fb_id, suspend: false }
   );
 
-  // const { loading, error, data } = useSubscription(USERS_SUBSCRIPTION, {
-  //   variables: { getUser().id },
-  //   suspend: false,
-  // })
-
   if (loading) {
     return <p>Loading...</p>
   }
