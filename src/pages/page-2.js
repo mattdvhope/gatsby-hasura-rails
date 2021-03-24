@@ -13,10 +13,6 @@ const SecondPage = () => {
 
   useEffect(async () => {
     if (!isLoggedIn()) {
-	    // const token = await getAccessToken(code)
-	    // const appToken = await getAppAccessToken()
-	    // const objectFromDebug = await inspectAccessToken(token, appToken)
-	    // const profile_of_person = await getUserProfile(objectFromDebug.data.user_id, token)
 	    handleLogin(GetFbUserProfile());
 	    console.log(getUser())
     	setName(getUser().name)
