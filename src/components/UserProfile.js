@@ -13,6 +13,9 @@ const USER_SUBSCRIPTION = gql`
       posts {
         id
         content
+        user {
+          first_name
+        }
       }
     }
   }
@@ -39,9 +42,8 @@ const UserProfile = () => {
 
   return(
     <div>
-      <div>{user.first_name} {user.last_name} - {user.fb_id}</div>
+      <div>Posts by {user.first_name} {user.last_name}</div>
       <ul>
-        <p>Posts by {user.first_name}</p>
         {user.posts.map(post => (
           <li key={post.id}>{post.content} ..by {post.user.first_name}</li>
         ))}
