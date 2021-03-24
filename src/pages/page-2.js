@@ -23,7 +23,7 @@ console.log(getUser())
 
   if (!fbId) {
   	return <span/>
-  } else if (getUser()) {
+  } else if (getUser().id) {
 		return (
 		  <Layout>
 		    <SEO title="Page two" />
