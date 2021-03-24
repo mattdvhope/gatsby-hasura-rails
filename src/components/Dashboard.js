@@ -8,9 +8,7 @@ const UserStuff = ({ FbUser }) => (
     <div style={{ margin: `2rem auto`, width: `550px` }}>
       <UserProfile FbUser={FbUser} />
     </div>
-    <div style={{ margin: `2rem auto`, width: `550px` }}>
-      <ListOfUserPosts FbUser={FbUser} />
-    </div>
+    
   </div>
 )
 

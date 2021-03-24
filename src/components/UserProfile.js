@@ -1,8 +1,9 @@
 import * as React from "react"
+import { getUser } from "../utils/auth"
 
-const UserProfile = ({ FbUser }) => {
+const UserProfile = () => {
 
-  const user = JSON.parse(FbUser)
+  const user = getUser();
 
   return (
   <div>
