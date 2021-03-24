@@ -36,7 +36,7 @@ console.log(getUser())
     return <pre>{JSON.stringify(error, null, 2)}</pre>
   }
 
-  const user = data.user.pop();
+  const user = data.users.pop();
 
   return(
     <div>
