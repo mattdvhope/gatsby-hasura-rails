@@ -9,6 +9,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
+      <p>Click this link to log into this website using your Facebook account.</p>
       <a
         href={FbLoginURL()}
       >
