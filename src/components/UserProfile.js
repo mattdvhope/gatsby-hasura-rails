@@ -17,6 +17,9 @@ const UsersList = () => {
 
   const fb_id = getUser().id
 
+  console.log(fb_id)
+  console.log(getUser())
+
   const { loading, error, data } = useSubscription(
     USERS_SUBSCRIPTION,
     { variables: fb_id, suspend: false }
