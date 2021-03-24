@@ -17,15 +17,18 @@ const SecondPage = () => {
     }
   }); // useEffect
 
-	return (
-	  <Layout>
-	    <SEO title="Page two" />
-	    <h3>Hi {fbId || getUser().id}!!</h3>
-	    <Dashboard/>
-	    <Link to="/">Go back to the homepage</Link>
-	  </Layout>
-	)
-
+  if (!fbId) {
+  	return <span/>
+  } else {
+		return (
+		  <Layout>
+		    <SEO title="Page two" />
+		    <h3>Hi {fbId || getUser().id}!!</h3>
+		    <Dashboard/>
+		    <Link to="/">Go back to the homepage</Link>
+		  </Layout>
+		)
+	}
 }
 
 export default SecondPage

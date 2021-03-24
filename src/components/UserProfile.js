@@ -15,6 +15,8 @@ const USER_SUBSCRIPTION = gql`
 
 const UserProfile = () => {
 
+console.log(getUser())
+
   const { loading, error, data } = useSubscription(
     USER_SUBSCRIPTION,
     { variables: { _eq: getUser().id }, suspend: false }
