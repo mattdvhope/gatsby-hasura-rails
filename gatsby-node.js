@@ -36,7 +36,6 @@ exports.createPages = async ({ actions: {createPage}, graphql }) => {
 		  blog {
 		    users {
 		    	id
-		      email
 		    }
 		  }
 		}
