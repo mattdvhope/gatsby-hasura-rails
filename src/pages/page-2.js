@@ -19,6 +19,8 @@ const SecondPage = () => {
     }
   }); // useEffect
 
+console.log(getUser())
+
   if (!fbId) {
   	return <span/>
   } else {
