@@ -17,9 +17,11 @@ const UserProfile = () => {
 
 console.log(getUser())
 
+  const fb_id = getUser().id;
+
   const { loading, error, data } = useSubscription(
     USER_SUBSCRIPTION,
-    { variables: { getUser().id }, suspend: false }
+    { variables: { fb_id }, suspend: false }
   );
 
   if (loading) {
