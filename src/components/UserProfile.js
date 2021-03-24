@@ -9,6 +9,10 @@ const USER_SUBSCRIPTION = gql`
       first_name
       last_name
       fb_id
+      posts {
+        id
+        content
+      }
     }
   }
 `;
@@ -32,12 +36,17 @@ console.log(getUser())
     return <pre>{JSON.stringify(error, null, 2)}</pre>
   }
 
+  const user = data.user.pop();
+
   return(
-    <ul>
-      {data.users.map(user => (
-        <li key={user.id}>{user.first_name} {user.last_name} - {user.fb_id}</li>
-      ))}
-    </ul>
+    <div>
+      <div>{user.first_name} {user.last_name} - {user.fb_id}</div>
+      <ul>
+        {user.posts.map(post => (
+          <li key={post.id}>{post.content}</li>
+        ))}
+      </ul>
+    </div>
   )
 }
 
