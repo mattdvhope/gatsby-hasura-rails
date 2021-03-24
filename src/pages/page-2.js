@@ -9,11 +9,13 @@ import { GetFbUserProfile } from "../utils/GetFbUserProfile";
 const SecondPage = () => {
 
 	const [fbId, setFbId] = useState(null);
+	const [name, setName] = useState(null);
 
   useEffect(async () => {
     if (!isLoggedIn()) {
 	    handleLogin(await GetFbUserProfile());
     	setFbId(getUser().id)
+    	setName(getUser().name)
     }
   }); // useEffect
 
@@ -23,7 +25,7 @@ const SecondPage = () => {
 		return (
 		  <Layout>
 		    <SEO title="Page two" />
-		    <h3>Hi {fbId || getUser().id}!!</h3>
+		    <h3>Hi {name || getUser().name}!!</h3>
 		    <Dashboard/>
 		    <Link to="/">Go back to the homepage</Link>
 		  </Layout>
