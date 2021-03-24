@@ -22,7 +22,7 @@ const UserProfile = () => {
 
   const fb_id = getUser().id;
 
-  const { loading, error, userData } = useSubscription(
+  const { loading, error, data } = useSubscription(
     USER_SUBSCRIPTION,
     { variables: {fb_id: { _eq: fb_id }}, suspend: false }
   );
@@ -35,7 +35,7 @@ const UserProfile = () => {
     return <pre>{JSON.stringify(error, null, 2)}</pre>
   }
 
-  const user = userData.users.pop();
+  const user = data.users.pop();
 
   return(
     <div>
