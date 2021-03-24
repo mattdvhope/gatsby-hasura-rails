@@ -3,7 +3,7 @@ import { gql, useQuery, useSubscription } from '@apollo/client';
 import { getUser } from "../utils/auth";
 
 const USER_SUBSCRIPTION = gql`
-  subscription($fb_id: String_comparison_exp!) {
+  query($fb_id: String_comparison_exp!) {
     users(where: { fb_id: $fb_id }) {
       id
       first_name
@@ -17,9 +17,10 @@ const UserProfile = ({ fb_id }) => {
 
 console.log(fb_id)
 
-  const { loading, error, data } = useSubscription(
+  const { loading, error, data } = useQuery(
     USER_SUBSCRIPTION,
-    { variables: null, suspend: false }
+    { variables: fb_id }
+    // { variables: fb_id, suspend: false }
   );
 
   if (loading) {
