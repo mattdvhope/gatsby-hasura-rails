@@ -37,11 +37,11 @@ console.log(fbUser);
 	  <button onClick={e => {
 		  addFbUser({
 		  	variables: {
-		  	 fb_id: fbUser.fb_id,
+		  	 fb_id: fbUser.id,
 		  	 first_name: fbUser.first_name,
 		  	 last_name: fbUser.last_name,
 		  	 name: fbUser.name,
-		  	 picture_url: fbUser.picture_url
+		  	 picture_url: fbUser.picture.data.url
 		  	}
 		  })
 	  }}>Add FB user to Rails</button>
