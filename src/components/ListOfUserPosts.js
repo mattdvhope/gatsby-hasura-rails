@@ -14,6 +14,8 @@ const USERS_SUBSCRIPTION = gql`
 
 const UsersList = ({ FbUser }) => {
 
+console.log(FBUser);
+
   const { loading, error, data } = useSubscription(USERS_SUBSCRIPTION, {
     suspend: false,
   })
