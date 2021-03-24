@@ -4,7 +4,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Dashboard from "../components/Dashboard"
 import { isLoggedIn, getUser, handleLogin } from "../utils/auth"
-// import { getAccessToken, getAppAccessToken, inspectAccessToken, getUserProfile } from "../utils/FBLoginValidations"
 import { GetFbUserProfile } from "../utils/GetFbUserProfile";
 
 const SecondPage = () => {
