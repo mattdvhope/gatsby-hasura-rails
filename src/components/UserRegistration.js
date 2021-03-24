@@ -31,8 +31,6 @@ const UserRegistration = () => {
   const fbUser = getUser();
   const [addFbUser, { data }] = useMutation(ADD_FB_USER);
 
-console.log(fbUser);
-
   return (
 	  <button onClick={e => {
 		  addFbUser({
