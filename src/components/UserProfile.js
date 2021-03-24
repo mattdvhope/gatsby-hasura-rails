@@ -1,9 +1,9 @@
 import * as React from "react";
-import { gql, useSubscription } from '@apollo/client';
+import { gql, useQuery, useSubscription } from '@apollo/client';
 import { getUser } from "../utils/auth";
 
-const USERS_SUBSCRIPTION = gql`
-  subscription($fb_id: String_comparison_exp!) {
+const USER_SUBSCRIPTION = gql`
+  query($fb_id: String_comparison_exp!) {
     users(where: { fb_id: $fb_id }) {
       id
       first_name
@@ -20,9 +20,10 @@ const UsersList = () => {
   console.log(fb_id)
   console.log(getUser())
 
-  const { loading, error, data } = useSubscription(
-    USERS_SUBSCRIPTION,
-    { variables: fb_id, suspend: false }
+  const { loading, error, data } = useQuery(
+    USER_SUBSCRIPTION,
+    { variables: fb_id }
+    // { variables: fb_id, suspend: false }
   );
 
   if (loading) {
