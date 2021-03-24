@@ -1,6 +1,6 @@
 import * as React from "react"
 import AddUser from "./AddUser"
-import UsersList from "./UsersList"
+import UserDashboard from "./UserDashboard"
 
 const UserStuff = ({ FbName }) => (
 	<div>
@@ -8,7 +8,7 @@ const UserStuff = ({ FbName }) => (
       <AddUser/>
     </div>
     <div style={{ margin: `2rem auto`, width: `550px` }}>
-      <UsersList FbName={FbName} />
+      <UserDashboard FbName={FbName} />
     </div>
   </div>
 )
