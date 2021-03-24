@@ -4,20 +4,20 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Dashboard from "../components/Dashboard"
 import { isLoggedIn, getUser, handleLogin } from "../utils/auth"
-import { getAccessToken, getAppAccessToken, inspectAccessToken, getUserProfile } from "../utils/FBLoginValidations"
-import { GetCodeFromUrl } from "../utils/GetCodeFromUrl";
+// import { getAccessToken, getAppAccessToken, inspectAccessToken, getUserProfile } from "../utils/FBLoginValidations"
+import { GetCodeFromUrl, GetFbUserProfile } from "../utils/GetFbUserProfile";
 
 const SecondPage = () => {
 
 	const [name, setName] = useState(null);
 
-  useEffect(async () => {
+  useEffect(() => {
     if (!isLoggedIn()) {
-	    const token = await getAccessToken(GetCodeFromUrl())
-	    const appToken = await getAppAccessToken()
-	    const objectFromDebug = await inspectAccessToken(token, appToken)
-	    const profile_of_person = await getUserProfile(objectFromDebug.data.user_id, token)
-	    handleLogin(profile_of_person);
+	    // const token = await getAccessToken(GetCodeFromUrl())
+	    // const appToken = await getAppAccessToken()
+	    // const objectFromDebug = await inspectAccessToken(token, appToken)
+	    // const profile_of_person = await getUserProfile(objectFromDebug.data.user_id, token)
+	    handleLogin(GetFbUserProfile());
 	    console.log(getUser())
     	setName(getUser().name)
     }
