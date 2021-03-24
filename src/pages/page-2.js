@@ -20,9 +20,15 @@ const SecondPage = () => {
   }); // useEffect
 
 console.log(getUser())
+console.log(getUser().id)
 
   if (!fbId) {
-  	return <span/>
+  	return (
+		  <Layout>
+		    <SEO title="Page two" />
+		    <Link to="/">Go back to the homepage</Link>
+		  </Layout>
+  	)
   } else if (getUser().id) {
 		return (
 		  <Layout>
@@ -32,6 +38,8 @@ console.log(getUser())
 		    <Link to="/">Go back to the homepage</Link>
 		  </Layout>
 		)
+	} else {
+		return <span/>
 	}
 }
 
