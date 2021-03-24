@@ -12,14 +12,14 @@ const SecondPage = () => {
 	const [name, setName] = useState(null);
 
   useEffect(async () => {
-    const code = GetCodeFromUrl();
+    // const code = GetCodeFromUrl();
 
     if (!isLoggedIn()) {
-	    const token = await getAccessToken(code)
-	    const appToken = await getAppAccessToken()
-	    const objectFromDebug = await inspectAccessToken(token, appToken)
-	    const profile_of_person = await getUserProfile(objectFromDebug.data.user_id, token)
-	    handleLogin(GetFbUserProfile());
+	    // const token = await getAccessToken(code)
+	    // const appToken = await getAppAccessToken()
+	    // const objectFromDebug = await inspectAccessToken(token, appToken)
+	    // const profile_of_person = await getUserProfile(objectFromDebug.data.user_id, token)
+	    handleLogin(await GetFbUserProfile());
 	    console.log(getUser())
     	setName(getUser().name)
     }
