@@ -1,9 +1,9 @@
-import * as React from "react";
+import React, { useEffect } from 'react';
 import { gql, useQuery, useSubscription } from '@apollo/client';
 import { getUser } from "../utils/auth";
 
 const USER_SUBSCRIPTION = gql`
-  query($fb_id: String_comparison_exp!) {
+  subscription($fb_id: String_comparison_exp!) {
     users(where: { fb_id: $fb_id }) {
       id
       first_name
@@ -13,17 +13,11 @@ const USER_SUBSCRIPTION = gql`
   }
 `;
 
-const UsersList = async () => {
+const UsersProfile = ({ fb_id }) => {
 
-  const fb_id = await getUser().id
-
-  console.log(fb_id)
-  console.log(getUser())
-
-  const { loading, error, data } = await useQuery(
+  const { loading, error, data } = useSubscription(
     USER_SUBSCRIPTION,
-    { variables: fb_id }
-    // { variables: fb_id, suspend: false }
+    { variables: fb_id, suspend: false }
   );
 
   if (loading) {
@@ -34,6 +28,8 @@ const UsersList = async () => {
     return <pre>{JSON.stringify(error, null, 2)}</pre>
   }
 
+  const { users } = data;
+
   return(
     <ul>
       {data.users.map(user => (
@@ -43,4 +39,4 @@ const UsersList = async () => {
   )
 }
 
-export default UsersList
+export default UsersProfile
