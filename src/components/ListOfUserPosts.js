@@ -12,9 +12,9 @@ const USERS_SUBSCRIPTION = gql`
   }
 `;
 
-const UsersList = ({ FbUser }) => {
+const UsersList = (FbUser) => {
 
-console.log(FBUser);
+  const FBUser = JSON.parse(FbUser)
 
   const { loading, error, data } = useSubscription(USERS_SUBSCRIPTION, {
     suspend: false,
