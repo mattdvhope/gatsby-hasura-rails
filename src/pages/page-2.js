@@ -10,9 +10,9 @@ const SecondPage = () => {
 
 	const [name, setName] = useState(null);
 
-  useEffect(() => {
+  useEffect(async () => {
     if (!isLoggedIn()) {
-	    handleLogin(GetFbUserProfile());
+	    handleLogin(await GetFbUserProfile());
 	    console.log(getUser())
     	setName(getUser().name)
     }
