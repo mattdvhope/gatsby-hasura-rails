@@ -29,7 +29,7 @@ console.log(getUser().id)
 		    <Link to="/">Go back to the homepage</Link>
 		  </Layout>
   	)
-  } else if (getUser().id) {
+  } else if (getUser().id !== null) {
 		return (
 		  <Layout>
 		    <SEO title="Page two" />
