@@ -20,7 +20,7 @@ const UsersList = async () => {
   console.log(fb_id)
   console.log(getUser())
 
-  const { loading, error, data } = useQuery(
+  const { loading, error, data } = await useQuery(
     USER_SUBSCRIPTION,
     { variables: fb_id }
     // { variables: fb_id, suspend: false }
