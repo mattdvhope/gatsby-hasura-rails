@@ -15,11 +15,11 @@ const USERS_SUBSCRIPTION = gql`
 
 const UsersList = () => {
 
-  const fbUser = getUser()
+  const fb_id = getUser().id
 
   const { loading, error, data } = useSubscription(
     USERS_SUBSCRIPTION,
-    { variables: { fbUser } }
+    { variables: fb_id }
   );
 
   // const { loading, error, data } = useSubscription(USERS_SUBSCRIPTION, {
