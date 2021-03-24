@@ -13,7 +13,7 @@ const USER_SUBSCRIPTION = gql`
   }
 `;
 
-const UsersProfile = ({ fb_id }) => {
+const UserProfile = ({ fb_id }) => {
 
   const { loading, error, data } = useSubscription(
     USER_SUBSCRIPTION,
@@ -39,4 +39,4 @@ const UsersProfile = ({ fb_id }) => {
   )
 }
 
-export default UsersProfile
+export default UserProfile
