@@ -21,7 +21,7 @@ console.log(getUser())
 
   const { loading, error, data } = useSubscription(
     USER_SUBSCRIPTION,
-    { variables: { fb_id }, suspend: false }
+    { variables: {fb_id: { _eq: fb_id }}, suspend: false }
   );
 
   if (loading) {
