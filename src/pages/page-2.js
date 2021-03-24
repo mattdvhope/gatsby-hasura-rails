@@ -5,14 +5,16 @@ import SEO from "../components/seo"
 import Dashboard from "../components/Dashboard"
 import { isLoggedIn, getUser, handleLogin } from "../utils/auth"
 import { getAccessToken, getAppAccessToken, inspectAccessToken, getUserProfile } from "../utils/FBLoginValidations"
+import { GetCodeFromUrl } from "../utils/GetFbUserProfile";
 
 const SecondPage = () => {
 
 	const [name, setName] = useState(null);
 
   useEffect(async () => {
-    const url_with_code = window.location.search.match(/(code=)(.*)(?=&state)/)
-    const code = url_with_code ? url_with_code[2] : null
+    // const url_with_code = window.location.search.match(/(code=)(.*)(?=&state)/)
+    // const code = url_with_code ? url_with_code[2] : null
+    const code = GetCodeFromUrl();
 
     if (!isLoggedIn()) {
 	    const token = await getAccessToken(code)
