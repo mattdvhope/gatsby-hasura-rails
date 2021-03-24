@@ -21,15 +21,9 @@ const SecondPage = () => {
 
 console.log(getUser())
 console.log(getUser().id)
+console.log(getUser().id !== null)
 
-  if (!fbId) {
-  	return (
-		  <Layout>
-		    <SEO title="Page two" />
-		    <Link to="/">Go back to the homepage</Link>
-		  </Layout>
-  	)
-  } else if (getUser().id !== null) {
+	if (fbId || getUser().id) {
 		return (
 		  <Layout>
 		    <SEO title="Page two" />
