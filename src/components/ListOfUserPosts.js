@@ -12,7 +12,7 @@ const USERS_SUBSCRIPTION = gql`
   }
 `;
 
-const UsersList = ({ FbUser }) => {
+const UsersList = (FbUser) => {
   const user = {...FbUser}
 
   const { loading, error, data } = useSubscription(USERS_SUBSCRIPTION, {
