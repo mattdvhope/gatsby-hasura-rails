@@ -19,7 +19,7 @@ console.log(fb_id)
 
   const { loading, error, data } = useSubscription(
     USER_SUBSCRIPTION,
-    { variables: fb_id, suspend: false }
+    { variables: null, suspend: false }
   );
 
   if (loading) {
