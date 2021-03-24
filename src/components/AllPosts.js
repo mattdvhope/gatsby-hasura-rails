@@ -27,12 +27,14 @@ const AllPosts = () => {
     return <pre>{JSON.stringify(error, null, 2)}</pre>
   }
 
+console.log(posts)
+
   return(
     <ul>
-      <p>All Posts</p>
+  {/* <p>All Posts</p>
       {data.posts.map(post => (
         <li key={post.id}>{post.content} ..by {post.user.first_name}</li>
-      ))}
+      ))}  */}    
     </ul>
   )
 
