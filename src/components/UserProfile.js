@@ -31,25 +31,21 @@ const UserProfile = () => {
   const fbUser = getUser();
   const [addFbUser, { data }] = useMutation(ADD_FB_USER);
 
-  addFbUser({
-  	variables: {
-  	 fb_id: fbUser.fb_id,
-  	 first_name: fbUser.first_name,
-  	 last_name: fbUser.last_name,
-  	 name: fbUser.name,
-  	 picture_url: fbUser.picture_url
-  	}
-  })
-
   return (
-  <div>
-    <p>This is who you are according to Facebook...</p>
-    <p>Full Name: {fbUser.name}</p>
-    <p>First Name: {fbUser.first_name}</p>
-    <p>Last Name: {fbUser.last_name}</p>
-  </div>
+	  <button onClick={e => {
+		  addFbUser({
+		  	variables: {
+		  	 fb_id: fbUser.fb_id,
+		  	 first_name: fbUser.first_name,
+		  	 last_name: fbUser.last_name,
+		  	 name: fbUser.name,
+		  	 picture_url: fbUser.picture_url
+		  	}
+		  })
+	  }}>Add FB user to Rails</button>
+  )
 
-)}
+}
 
 export default UserProfile;
 

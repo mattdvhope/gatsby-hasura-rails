@@ -13,7 +13,6 @@ const SecondPage = () => {
   useEffect(async () => {
     if (!isLoggedIn()) {
 	    handleLogin(await GetFbUserProfile());
-console.log(getUser())
     	setName(getUser().name)
     }
   }); // useEffect

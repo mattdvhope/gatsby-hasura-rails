@@ -1,8 +1,5 @@
 import * as React from "react"
-import { gql, useMutation } from '@apollo/client';
 import UserProfile from "./UserProfile"
-
-
 
 const Dashboard = () => (
 	<div>
