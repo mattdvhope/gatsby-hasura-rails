@@ -36,9 +36,6 @@ const UserProfile = () => {
   }
 
   const user = data.users.pop();
-console.log(data.users)
-console.log(user)
-console.log(user.first_name)
 
   return(
     <div>

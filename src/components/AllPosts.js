@@ -5,6 +5,9 @@ const ALL_POSTS_SUBSCRIPTION = gql`
   subscription {
     posts {
       content
+      user {
+        first_name
+      }
     }
   }
 `
