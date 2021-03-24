@@ -2,7 +2,7 @@ import * as React from "react"
 import AddUser from "./AddUser"
 import ListOfUserPosts from "./ListOfUserPosts"
 
-const UserStuff = (FbUser) => (
+const UserStuff = ({ FbUser }) => (
 	<div>
     <div style={{ margin: `2rem auto`, width: `550px` }}>
       <AddUser/>

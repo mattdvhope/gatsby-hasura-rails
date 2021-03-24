@@ -14,6 +14,7 @@ const SecondPage = () => {
     if (!isLoggedIn()) {
 	    handleLogin(await GetFbUserProfile());
 	    console.log(getUser())
+	    console.log(JSON.stringify(getUser()))
     	setName(getUser().name)
     }
   }); // useEffect
@@ -22,7 +23,7 @@ const SecondPage = () => {
 	  <Layout>
 	    <SEO title="Page two" />
 	    <h3>Hi {name || getUser().name}, Here is some interesting content for a two or more people to chat about while interacting on this web page.  They won't have to switch back and forth between this page and Facebook Messenger or LINE.  They can have all of their interaction, discipleship, relationship-development, content-sharing, etc, etc, right here on this page!!</h3>
-	    <Dashboard FbUser={JSON.stringify(getUser())}/>
+	    <Dashboard FbUser={name || getUser().name}/>
 	    <Link to="/">Go back to the homepage</Link>
 	  </Layout>)
 

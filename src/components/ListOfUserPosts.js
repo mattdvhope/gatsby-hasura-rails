@@ -12,9 +12,7 @@ const USERS_SUBSCRIPTION = gql`
   }
 `;
 
-const UsersList = (FbUser) => {
-
-  const FBUser = JSON.parse(FbUser)
+const UsersList = ({ FbUser }) => {
 
   const { loading, error, data } = useSubscription(USERS_SUBSCRIPTION, {
     suspend: false,
@@ -31,7 +29,7 @@ const UsersList = (FbUser) => {
   return(
     <ul>
       {data.users.map(user => (
-        <li key={user.id}>{user.username} <span style={{ color: `#c7b7b7`, fontSize: `60%` }}>...by {FbUser.name}</span></li>
+        <li key={user.id}>{user.username} <span style={{ color: `#c7b7b7`, fontSize: `60%` }}>...by {FbUser}</span></li>
       ))}
     </ul>
   )
