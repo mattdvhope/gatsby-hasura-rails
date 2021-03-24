@@ -21,7 +21,7 @@ const SecondPage = () => {
 	  <Layout>
 	    <SEO title="Page two" />
 	    <h3>Hi {fbId || getUser().id}!!</h3>
-	    <Dashboard fb_id={fbId || getUser().id} />
+	    <Dashboard/>
 	    <Link to="/">Go back to the homepage</Link>
 	  </Layout>
 	)

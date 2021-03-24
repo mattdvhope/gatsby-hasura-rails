@@ -13,13 +13,11 @@ const USER_SUBSCRIPTION = gql`
   }
 `;
 
-const UserProfile = ({ fb_id }) => {
-
-console.log(fb_id)
+const UserProfile = () => {
 
   const { loading, error, data } = useSubscription(
     USER_SUBSCRIPTION,
-    { variables: { _eq: fb_id }, suspend: false }
+    { variables: { _eq: getUser().id }, suspend: false }
   );
 
   if (loading) {
@@ -29,8 +27,6 @@ console.log(fb_id)
   if (error) {
     return <pre>{JSON.stringify(error, null, 2)}</pre>
   }
-
-  const { users } = data;
 
   return(
     <ul>
