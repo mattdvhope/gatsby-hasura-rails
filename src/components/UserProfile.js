@@ -38,17 +38,18 @@ const UserProfile = () => {
   const user = data.users.pop();
 console.log(data.users)
 console.log(user)
+console.log(user.first_name)
 
   return(
     <div>
-  {/* <div>{user.first_name} {user.last_name} - {user.fb_id}</div>
+      <div>{user.first_name} {user.last_name} - {user.fb_id}</div>
       <ul>
         <p>Posts by {user.first_name}</p>
         {user.posts.map(post => (
           <li key={post.id}>{post.content} ..by {post.user.first_name}</li>
         ))}
       </ul>
-      <AllPosts/>  */}    
+      <AllPosts/>    
     </div>
   )
 }
