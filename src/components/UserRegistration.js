@@ -27,7 +27,7 @@ const ADD_FB_USER = gql`
 	}
 `;
 
-const UserProfile = () => {
+const UserRegistration = () => {
   const fbUser = getUser();
   const [addFbUser, { data }] = useMutation(ADD_FB_USER);
 
@@ -44,10 +44,10 @@ console.log(fbUser);
 		  	 picture_url: fbUser.picture.data.url
 		  	}
 		  })
-	  }}>Add FB user to Rails</button>
+	  }}>Register on this app with your FB profile</button>
   )
 
 }
 
-export default UserProfile;
+export default UserRegistration;
 
