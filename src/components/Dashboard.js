@@ -3,14 +3,14 @@ import UserProfile from "./UserProfile"
 import AddUser from "./AddUser"
 import ListOfUserPosts from "./ListOfUserPosts"
 
-const UserStuff = ({ FbUser }) => (
+const Dashboard = () => (
 	<div>
     <div style={{ margin: `2rem auto`, width: `550px` }}>
-      <UserProfile FbUser={FbUser} />
+      <UserProfile/>
     </div>
     
   </div>
 )
 
-export default UserStuff;
+export default Dashboard;
 
