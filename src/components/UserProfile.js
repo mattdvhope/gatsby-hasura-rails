@@ -13,9 +13,9 @@ const USER_SUBSCRIPTION = gql`
   }
 `;
 
-const UsersList = () => {
+const UsersList = async () => {
 
-  const fb_id = getUser().id
+  const fb_id = await getUser().id
 
   console.log(fb_id)
   console.log(getUser())
