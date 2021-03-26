@@ -24,6 +24,7 @@ const ADD_FB_USER = gql`
 	    last_name
 	    name
 	    picture_url
+	    login_time
 	  }
 	}
 `;
@@ -31,6 +32,7 @@ const ADD_FB_USER = gql`
 const UserRegistration = () => {
   const fbUser = getUser();
   const [addFbUser, { data }] = useMutation(ADD_FB_USER);
+  const timeNow = Date.now();
 
   useEffect(() => {
 		return window.onload = function() {
@@ -40,13 +42,13 @@ const UserRegistration = () => {
 		  	 first_name: fbUser.first_name,
 		  	 last_name: fbUser.last_name,
 		  	 name: fbUser.name,
-		  	 picture_url: fbUser.picture.data.url
+		  	 picture_url: fbUser.picture.data.url,
+		  	 login_time: timeNow
 		  	}
 		  });
 		};
   }); // useEffect
 
-  const timeNow = Date.now();
 
   return (
 		<div id="mainDiv">

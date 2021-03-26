@@ -17,6 +17,7 @@ const USER_SUBSCRIPTION = gql`
           first_name
         }
       }
+      login_time
     }
   }
 `;
@@ -43,7 +44,7 @@ const UserProfile = () => {
   if (user) {
     return (
       <div>
-        <div>Posts by {user.first_name} {user.last_name}</div>
+        <div>Posts by {user.name} - {user.login_time}</div>
         <ul>
           {user.posts.map(post => (
             <li key={post.id}>{post.content} ..by {post.user.first_name}</li>

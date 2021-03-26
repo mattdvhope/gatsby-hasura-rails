@@ -8,6 +8,7 @@ const ALL_USERS_SUBSCRIPTION = gql`
       first_name
       last_name
       name
+      login_time
     }
   }
 `
@@ -31,7 +32,7 @@ const AllUsers = () => {
     <ul>
   		<p>All Users</p>
       {data.users.map(user => (
-        <li key={user.id}>{user.name}</li>
+        <li key={user.id}>{user.name} - {user.login_time}</li>
       ))}
     </ul>
   )
