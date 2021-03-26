@@ -22,14 +22,12 @@ const SecondPage = () => {
   const d = new Date();
   const timeNow = d.valueOf();
 
-  console.log(timeNow);
-
 	if (fbId || getUser().id) {
 		return (
 		  <Layout>
 		    <SEO title="Page two" />
 		    <h3>Hi {name || getUser().name}!!</h3>
-		    <UserRegistration/>
+		    <UserRegistration timeNow={timeNow}/>
 		    <Link to="/">Go back to the homepage</Link>
 		  </Layout>
 		)
