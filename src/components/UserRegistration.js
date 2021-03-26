@@ -1,6 +1,7 @@
 import * as React from "react"
 import { getUser } from "../utils/auth"
 import { gql, useMutation } from '@apollo/client';
+import UserProfile from "./UserProfile";
 
 const ADD_FB_USER = gql`
 	mutation addUser(
@@ -35,21 +36,34 @@ const UserRegistration = () => {
   	document.getElementById("RegistrationButton").textContent="You're Registered!!";;
   }
 
+  const ShowUserProfile = () => {
+  	document.getElementById("mainDiv").appendChild(
+			<div style={{ margin: `2rem auto`, width: `550px` }}>
+	      <UserProfile/>
+	    </div>
+  	);
+  }
+
   return (
-	  <button 
-	  	id="RegistrationButton"
-	  	onClick={async e => {
-			  await addFbUser({
-			  	variables: {
-			  	 fb_id: fbUser.id,
-			  	 first_name: fbUser.first_name,
-			  	 last_name: fbUser.last_name,
-			  	 name: fbUser.name,
-			  	 picture_url: fbUser.picture.data.url
-			  	}
-			  });
-			  await TellRegistered();
-		  }}>Register on this app using your FB profile</button>
+		<div id="mainDiv">
+	    <div style={{ margin: `2rem auto`, width: `550px` }}>
+			  <button 
+			  	id="RegistrationButton"
+			  	onClick={async e => {
+					  await addFbUser({
+					  	variables: {
+					  	 fb_id: fbUser.id,
+					  	 first_name: fbUser.first_name,
+					  	 last_name: fbUser.last_name,
+					  	 name: fbUser.name,
+					  	 picture_url: fbUser.picture.data.url
+					  	}
+					  });
+					  await TellRegistered();
+					  await ShowUserProfile();
+				  }}>Register on this app using your FB profile</button>
+	    </div>
+	  </div>
   )
 }
 

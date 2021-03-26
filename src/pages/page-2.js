@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Dashboard from "../components/Dashboard"
+import UserRegistration from "../components/UserRegistration"
 import { isLoggedIn, getUser, handleLogin } from "../utils/auth"
 import { GetFbUserProfile } from "../utils/GetFbUserProfile";
 
@@ -28,7 +28,7 @@ console.log(getUser().id !== null)
 		  <Layout>
 		    <SEO title="Page two" />
 		    <h3>Hi {name || getUser().name}!!</h3>
-		    <Dashboard/>
+		    <UserRegistration/>
 		    <Link to="/">Go back to the homepage</Link>
 		  </Layout>
 		)
