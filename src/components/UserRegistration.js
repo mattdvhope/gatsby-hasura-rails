@@ -33,7 +33,18 @@ const UserRegistration = () => {
   const [addFbUser, { data }] = useMutation(ADD_FB_USER);
 
   const TellRegistered = () => {
-  	document.getElementById("RegistrationButton").textContent="You're Registered!!";;
+  	document.getElementById("RegistrationButton").textContent="You're Registered!!";
+		ShowUserProfile(true)  	
+  }
+
+  const ShowUserProfile = (registered) => {
+  	if (registered) {
+  		return (
+		    <div style={{ margin: `2rem auto`, width: `550px` }}>
+		      <UserProfile />
+		    </div>
+  		)
+  	}
   }
 
   return (
@@ -42,7 +53,6 @@ const UserRegistration = () => {
 			  <button 
 			  	id="RegistrationButton"
 			  	onClick={async e => {
-					  TellRegistered();
 					  await addFbUser({
 					  	variables: {
 					  	 fb_id: fbUser.id,
@@ -52,11 +62,10 @@ const UserRegistration = () => {
 					  	 picture_url: fbUser.picture.data.url
 					  	}
 					  });
+					  await TellRegistered();
 				  }}>Register on this app using your FB profile</button>
 	    </div>
-	    <div style={{ margin: `2rem auto`, width: `550px` }}>
-	      <UserProfile />
-	    </div>
+	    {ShowUserProfile(false)}
 	  </div>
   )
 }
