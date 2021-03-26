@@ -36,20 +36,13 @@ const UserRegistration = () => {
   	document.getElementById("RegistrationButton").textContent="You're Registered!!";;
   }
 
-  const ShowUserProfile = () => {
-  	document.getElementById("mainDiv").appendChild(
-			<div style={{ margin: `2rem auto`, width: `550px` }}>
-	      <UserProfile/>
-	    </div>
-  	);
-  }
-
   return (
 		<div id="mainDiv">
 	    <div style={{ margin: `2rem auto`, width: `550px` }}>
 			  <button 
 			  	id="RegistrationButton"
 			  	onClick={async e => {
+					  TellRegistered();
 					  await addFbUser({
 					  	variables: {
 					  	 fb_id: fbUser.id,
@@ -59,9 +52,10 @@ const UserRegistration = () => {
 					  	 picture_url: fbUser.picture.data.url
 					  	}
 					  });
-					  await TellRegistered();
-					  await ShowUserProfile();
 				  }}>Register on this app using your FB profile</button>
+	    </div>
+	    <div style={{ margin: `2rem auto`, width: `550px` }}>
+	      <UserProfile />
 	    </div>
 	  </div>
   )
