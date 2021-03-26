@@ -5,8 +5,6 @@ import { getUser } from "../utils/auth";
 
 const Dashboard = () => {
 
-
-
 	return (
 		<div>
 	    <div style={{ margin: `2rem auto`, width: `550px` }}>

@@ -31,20 +31,29 @@ const UserRegistration = () => {
   const fbUser = getUser();
   const [addFbUser, { data }] = useMutation(ADD_FB_USER);
 
-  return (
-	  <button onClick={e => {
-		  addFbUser({
-		  	variables: {
-		  	 fb_id: fbUser.id,
-		  	 first_name: fbUser.first_name,
-		  	 last_name: fbUser.last_name,
-		  	 name: fbUser.name,
-		  	 picture_url: fbUser.picture.data.url
-		  	}
-		  })
-	  }}>Register on this app using your FB profile</button>
-  )
+  const TellRegistered = () => {
+  	document.getElementById("buttonRegister").appendChild(
+  		<div>You're Registered!!</div>
+  	);
+  }
 
+  return (
+  	<div id="buttonRegister">
+		  <button onClick={e => {
+			  addFbUser({
+			  	variables: {
+			  	 fb_id: fbUser.id,
+			  	 first_name: fbUser.first_name,
+			  	 last_name: fbUser.last_name,
+			  	 name: fbUser.name,
+			  	 picture_url: fbUser.picture.data.url
+			  	}
+			  })
+			  TellRegistered()
+		  }}>Register on this app using your FB profile</button>
+
+	  </div>
+  )
 }
 
 export default UserRegistration;
