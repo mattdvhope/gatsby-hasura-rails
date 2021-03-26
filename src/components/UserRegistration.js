@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useEffect } from 'react';
 import { getUser } from "../utils/auth"
 import { gql, useMutation } from '@apollo/client';
 import UserProfile from "./UserProfile";
@@ -36,20 +36,19 @@ const UserRegistration = () => {
   	document.getElementById("RegistrationButton").textContent="You're Registered!!";
   }
 
-  window.onload = () => {
-  	
-  	console.log("in window.onload");
-
-  	addFbUser({
-	  	variables: {
-	  	 fb_id: fbUser.id,
-	  	 first_name: fbUser.first_name,
-	  	 last_name: fbUser.last_name,
-	  	 name: fbUser.name,
-	  	 picture_url: fbUser.picture.data.url
-	  	}
-	  });
-  }
+  useEffect(() => {
+	  window.onload = () => {
+	  	addFbUser({
+		  	variables: {
+		  	 fb_id: fbUser.id,
+		  	 first_name: fbUser.first_name,
+		  	 last_name: fbUser.last_name,
+		  	 name: fbUser.name,
+		  	 picture_url: fbUser.picture.data.url
+		  	}
+		  });
+	  }
+  }); // useEffect
 
   return (
 		<div id="mainDiv">
