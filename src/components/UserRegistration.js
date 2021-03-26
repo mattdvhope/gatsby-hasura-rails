@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { getUser } from "../utils/auth"
 import { gql, useMutation } from '@apollo/client';
 import UserProfile from "./UserProfile";
@@ -32,9 +32,7 @@ const UserRegistration = () => {
   const fbUser = getUser();
   const [addFbUser, { data }] = useMutation(ADD_FB_USER);
 
-  const TellRegistered = () => {
-  	document.getElementById("RegistrationButton").textContent="You're Registered!!";
-  }
+	const [time, setTime] = useState(0);
 
   useEffect(() => {
 		return window.onload = function() {
@@ -47,6 +45,7 @@ const UserRegistration = () => {
 		  	 picture_url: fbUser.picture.data.url
 		  	}
 		  });
+		  setTime(Date.now());
 		  console.log(Date.now());
 		  console.log(Date.now() - 120000); // 2 minutes
 		};
@@ -55,6 +54,7 @@ const UserRegistration = () => {
   return (
 		<div id="mainDiv">
 	    <div style={{ margin: `2rem auto`, width: `550px` }}>
+	      <p>Time: {time}</p>
 	      <UserProfile />
 	    </div>
 	  </div>
