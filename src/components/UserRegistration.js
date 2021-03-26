@@ -35,6 +35,8 @@ const UserRegistration = ({ timeNow }) => {
   const fbUser = getUser();
   const [addFbUser, { data }] = useMutation(ADD_FB_USER);
 
+console.log(timeNow);
+
   useEffect(() => {
 		return window.onload = function() {
 	  	addFbUser({
