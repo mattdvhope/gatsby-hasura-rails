@@ -32,9 +32,10 @@ const UserRegistration = () => {
   const [addFbUser, { data }] = useMutation(ADD_FB_USER);
 
   const TellRegistered = () => {
-  	document.getElementById("buttonRegister").appendChild(
-  		<div>You're Registered!!</div>
-  	);
+  	let node = document.createElement("div");
+  	var textnode = document.createTextNode("You're Registered!!");
+  	node.appendChild(textnode);
+  	document.getElementById("myList").appendChild(node);
   }
 
   return (
