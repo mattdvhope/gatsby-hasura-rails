@@ -12,7 +12,7 @@ const ALL_USERS_SUBSCRIPTION = gql`
   }
 `
 
-const AllPosts = () => {
+const AllUsers = () => {
 
   const { loading, error, data } = useSubscription(
     ALL_USERS_SUBSCRIPTION,
@@ -20,7 +20,7 @@ const AllPosts = () => {
   );
 
   if (loading) {
-    return <p>Loading posts...</p>
+    return <p>Loading users...</p>
   }
 
   if (error) {
@@ -38,4 +38,4 @@ const AllPosts = () => {
 
 }
 
-export default AllPosts;
+export default AllUsers;
