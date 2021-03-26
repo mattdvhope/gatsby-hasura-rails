@@ -49,7 +49,6 @@ const UserRegistration = () => {
 			  	 picture_url: fbUser.picture.data.url
 			  	}
 			  })
-			  TellRegistered()
 		  }}>Register on this app using your FB profile</button>
 
 	  </div>
