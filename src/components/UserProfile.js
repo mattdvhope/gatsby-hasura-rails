@@ -1,7 +1,7 @@
 import React from 'react';
 import { gql, useSubscription } from '@apollo/client';
 import { getUser } from "../utils/auth";
-import AllPosts from "./AllPosts"
+import AllUsers from "./AllUsers"
 
 const USER_SUBSCRIPTION = gql`
   subscription($fb_id: String_comparison_exp!) {
@@ -49,7 +49,7 @@ const UserProfile = () => {
             <li key={post.id}>{post.content} ..by {post.user.first_name}</li>
           ))}
         </ul>
-        <AllPosts/>    
+        <AllUsers/>    
       </div>
     )
   } else {

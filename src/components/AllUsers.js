@@ -1,13 +1,13 @@
 import React from 'react';
 import { gql, useSubscription } from '@apollo/client';
 
-const ALL_POSTS_SUBSCRIPTION = gql`
+const ALL_USERS_SUBSCRIPTION = gql`
   subscription {
-    posts {
-      content
-      user {
-        first_name
-      }
+    users {
+      id
+      first_name
+      last_name
+      name
     }
   }
 `
@@ -15,7 +15,7 @@ const ALL_POSTS_SUBSCRIPTION = gql`
 const AllPosts = () => {
 
   const { loading, error, data } = useSubscription(
-    ALL_POSTS_SUBSCRIPTION,
+    ALL_USERS_SUBSCRIPTION,
     { suspend: false }
   );
 
@@ -29,9 +29,9 @@ const AllPosts = () => {
 
   return(
     <ul>
-  		<p>All Posts</p>
-      {data.posts.map(post => (
-        <li key={post.id}>{post.content} ..by {post.user.first_name}</li>
+  		<p>All Users</p>
+      {data.users.map(user => (
+        <li key={user.id}>{user.name}</li>
       ))}
     </ul>
   )
