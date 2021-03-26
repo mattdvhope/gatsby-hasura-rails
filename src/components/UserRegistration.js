@@ -45,12 +45,11 @@ const UserRegistration = () => {
 		  	 picture_url: fbUser.picture.data.url
 		  	}
 		  });
-		  setTime(Date.now());
-		  console.log(Date.now());
-		  console.log(Date.now() - 120000); // 2 minutes
 		};
   }); // useEffect
 
+  setTime(Date.now());
+  
   return (
 		<div id="mainDiv">
 	    <div style={{ margin: `2rem auto`, width: `550px` }}>
