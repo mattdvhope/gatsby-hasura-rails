@@ -20,7 +20,7 @@ const SecondPage = () => {
   }); // useEffect
 
   const d = new Date();
-  const timeNow = 25920; //d.valueOf();
+  const timeNow = 22212835; //d.valueOf();
 
 
 	if (fbId || getUser().id) {
