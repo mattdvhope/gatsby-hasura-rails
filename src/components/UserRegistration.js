@@ -37,6 +37,9 @@ const UserRegistration = () => {
   }
 
   window.onload = () => {
+  	
+  	console.log("in window.onload");
+
   	addFbUser({
 	  	variables: {
 	  	 fb_id: fbUser.id,
