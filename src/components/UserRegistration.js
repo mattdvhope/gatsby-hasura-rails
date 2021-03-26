@@ -47,27 +47,13 @@ const UserRegistration = () => {
 		  	 picture_url: fbUser.picture.data.url
 		  	}
 		  });
+		  console.log(Date.now());
+		  console.log(Date.now() - 6000);
 		};
   }); // useEffect
 
   return (
 		<div id="mainDiv">
-	    <div style={{ margin: `2rem auto`, width: `550px` }}>
-		{/* <button 
-			  	id="RegistrationButton"
-			  	onClick={e => {
-					  addFbUser({
-					  	variables: {
-					  	 fb_id: fbUser.id,
-					  	 first_name: fbUser.first_name,
-					  	 last_name: fbUser.last_name,
-					  	 name: fbUser.name,
-					  	 picture_url: fbUser.picture.data.url
-					  	}
-					  });
-					  await TellRegistered();
-				  }}>Register on this app using your FB profile</button> */}
-	    </div>
 	    <div style={{ margin: `2rem auto`, width: `550px` }}>
 	      <UserProfile />
 	    </div>
