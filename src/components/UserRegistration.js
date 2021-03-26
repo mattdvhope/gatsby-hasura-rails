@@ -32,16 +32,14 @@ const UserRegistration = () => {
   const [addFbUser, { data }] = useMutation(ADD_FB_USER);
 
   const TellRegistered = () => {
-  	let node = document.createElement("div");
-  	var textnode = document.createTextNode("You're Registered!!");
-  	node.appendChild(textnode);
-  	document.getElementById("buttonRegister").appendChild(node);
+  	document.getElementById("RegistrationButton").textContent="You're Registered!!";;
   }
 
   return (
-  	<div id="buttonRegister">
-		  <button onClick={e => {
-			  addFbUser({
+	  <button 
+	  	id="RegistrationButton"
+	  	onClick={async e => {
+			  await addFbUser({
 			  	variables: {
 			  	 fb_id: fbUser.id,
 			  	 first_name: fbUser.first_name,
@@ -49,11 +47,9 @@ const UserRegistration = () => {
 			  	 name: fbUser.name,
 			  	 picture_url: fbUser.picture.data.url
 			  	}
-			  })
-			  TellRegistered()
-		  }
-		}>Register on this app using your FB profile</button>
-	  </div>
+			  });
+			  await TellRegistered();
+		  }}>Register on this app using your FB profile</button>
   )
 }
 
