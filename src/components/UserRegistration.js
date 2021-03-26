@@ -48,8 +48,10 @@ const UserRegistration = () => {
 		};
   }); // useEffect
 
-  // setTime(Date.now());
-  
+  const timeNow = Date.now();
+
+  setTime(timeNow);
+
   return (
 		<div id="mainDiv">
 	    <div style={{ margin: `2rem auto`, width: `550px` }}>
