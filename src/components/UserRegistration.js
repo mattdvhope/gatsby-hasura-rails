@@ -34,7 +34,8 @@ const ADD_FB_USER = gql`
 const UserRegistration = () => {
   const fbUser = getUser();
   const [addFbUser, { data }] = useMutation(ADD_FB_USER);
-  const timeNow = new Date().getMinutes() + 60;
+  const d = new Date();
+  const timeNow = d.valueOf();
 
   useEffect(() => {
 		return window.onload = function() {
