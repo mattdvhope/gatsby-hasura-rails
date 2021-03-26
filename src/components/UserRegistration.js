@@ -35,7 +35,7 @@ const UserRegistration = () => {
   	let node = document.createElement("div");
   	var textnode = document.createTextNode("You're Registered!!");
   	node.appendChild(textnode);
-  	document.getElementById("myList").appendChild(node);
+  	document.getElementById("buttonRegister").appendChild(node);
   }
 
   return (
@@ -53,7 +53,6 @@ const UserRegistration = () => {
 			  TellRegistered()
 		  }
 		}>Register on this app using your FB profile</button>
-
 	  </div>
   )
 }
