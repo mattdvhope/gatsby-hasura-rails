@@ -32,6 +32,10 @@ const UserRegistration = () => {
   const fbUser = getUser();
   const [addFbUser, { data }] = useMutation(ADD_FB_USER);
 
+  const ProcessingRegistration = () => {
+  	document.getElementById("RegistrationButton").textContent="Processing......";
+  }
+
   const TellRegistered = () => {
   	document.getElementById("RegistrationButton").textContent="You're Registered!!";
   }
@@ -42,6 +46,7 @@ const UserRegistration = () => {
 			  <button 
 			  	id="RegistrationButton"
 			  	onClick={async e => {
+			  		ProcessingRegistration()
 					  await addFbUser({
 					  	variables: {
 					  	 fb_id: fbUser.id,
