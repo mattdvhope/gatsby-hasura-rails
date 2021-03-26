@@ -10,7 +10,7 @@ const ADD_FB_USER = gql`
 	  $last_name: String!
 	  $name: String!
 	  $picture_url: String!
-	  $login_time: timestamptz!
+	  $login_time: Int!
 	) {
 	  registerUser(
 	    fb_id: $fb_id,
