@@ -48,7 +48,7 @@ const UserRegistration = () => {
 		  	}
 		  });
 		  console.log(Date.now());
-		  console.log(Date.now() - 6000);
+		  console.log(Date.now() - 120000); // 2 minutes
 		};
   }); // useEffect
 
