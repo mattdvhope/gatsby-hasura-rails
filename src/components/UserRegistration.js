@@ -37,10 +37,7 @@ const UserRegistration = () => {
   }
 
   useEffect(() => {
-	  window.onload = () => {
-
-	  	console.log("in window.onload");
-
+		window.onload = function() {
 	  	addFbUser({
 		  	variables: {
 		  	 fb_id: fbUser.id,
@@ -50,7 +47,7 @@ const UserRegistration = () => {
 		  	 picture_url: fbUser.picture.data.url
 		  	}
 		  });
-	  }
+		};
   }); // useEffect
 
   return (
