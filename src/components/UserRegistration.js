@@ -37,7 +37,7 @@ const UserRegistration = () => {
   }
 
   useEffect(() => {
-		window.onload = function() {
+		return window.onload = function() {
 	  	addFbUser({
 		  	variables: {
 		  	 fb_id: fbUser.id,
