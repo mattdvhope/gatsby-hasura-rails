@@ -49,6 +49,7 @@ console.log(timeNow);
 		  	 login_time: timeNow
 		  	}
 		  });
+		  console.log("inside useEffect, after addFbUser")
 		};
   }); // useEffect
 
