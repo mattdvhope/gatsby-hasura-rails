@@ -48,7 +48,7 @@ const UserRegistration = () => {
 		};
   }); // useEffect
 
-  setTime(Date.now());
+  // setTime(Date.now());
   
   return (
 		<div id="mainDiv">
