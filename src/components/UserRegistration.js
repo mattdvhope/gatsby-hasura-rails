@@ -36,19 +36,6 @@ const UserRegistration = () => {
   	document.getElementById("RegistrationButton").textContent="You're Registered!!";
   }
 
-  const ShowUserProfile = () => {
-  	const buttonText = document.getElementById("RegistrationButton").innerHTML;
-  	if (buttonText === "You're Registered!!") {
-			return (
-		    <div style={{ margin: `2rem auto`, width: `550px` }}>
-		      <UserProfile />
-		    </div>
-			)
-  	}
-  }
-
-
-
   return (
 		<div id="mainDiv">
 	    <div style={{ margin: `2rem auto`, width: `550px` }}>
@@ -67,7 +54,9 @@ const UserRegistration = () => {
 					  await TellRegistered();
 				  }}>Register on this app using your FB profile</button>
 	    </div>
-	    {ShowUserProfile()}
+	    <div style={{ margin: `2rem auto`, width: `550px` }}>
+	      <UserProfile />
+	    </div>
 	  </div>
   )
 }

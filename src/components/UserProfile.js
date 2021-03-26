@@ -40,17 +40,22 @@ const UserProfile = () => {
 
   const user = data.users.pop();
 
-  return(
-    <div>
-      <div>Posts by {user.first_name} {user.last_name}</div>
-      <ul>
-        {user.posts.map(post => (
-          <li key={post.id}>{post.content} ..by {post.user.first_name}</li>
-        ))}
-      </ul>
-      <AllPosts/>    
-    </div>
-  )
+  if (user) {
+    return (
+      <div>
+        <div>Posts by {user.first_name} {user.last_name}</div>
+        <ul>
+          {user.posts.map(post => (
+            <li key={post.id}>{post.content} ..by {post.user.first_name}</li>
+          ))}
+        </ul>
+        <AllPosts/>    
+      </div>
+    )
+  } else {
+    return <span/>
+  }
+
 }
 
 export default UserProfile
