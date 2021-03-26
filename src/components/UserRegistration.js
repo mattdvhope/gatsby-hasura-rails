@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { getUser } from "../utils/auth"
 import { gql, useMutation } from '@apollo/client';
 import UserProfile from "./UserProfile";
@@ -32,8 +32,6 @@ const UserRegistration = () => {
   const fbUser = getUser();
   const [addFbUser, { data }] = useMutation(ADD_FB_USER);
 
-	const [time, setTime] = useState(0);
-
   useEffect(() => {
 		return window.onload = function() {
 	  	addFbUser({
@@ -50,12 +48,10 @@ const UserRegistration = () => {
 
   const timeNow = Date.now();
 
-  setTime(timeNow);
-
   return (
 		<div id="mainDiv">
 	    <div style={{ margin: `2rem auto`, width: `550px` }}>
-	      <p>Time: {time}</p>
+	      <p>Time: {timeNow}</p>
 	      <UserProfile />
 	    </div>
 	  </div>
