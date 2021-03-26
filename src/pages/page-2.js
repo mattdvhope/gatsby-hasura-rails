@@ -19,9 +19,10 @@ const SecondPage = () => {
     }
   }); // useEffect
 
-console.log(getUser())
-console.log(getUser().id)
-console.log(getUser().id !== null)
+  const d = new Date();
+  const timeNow = d.valueOf();
+
+  console.log(timeNow);
 
 	if (fbId || getUser().id) {
 		return (
