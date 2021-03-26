@@ -22,7 +22,6 @@ const SecondPage = () => {
   const days_passed = (dt) => {
 	  const current = new Date(dt.getTime());
 	  const previous = new Date(2021, 0, 1);
-
 	  return Math.ceil((current - previous + 1) / 86400000);
 	}
 

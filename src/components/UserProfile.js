@@ -31,6 +31,9 @@ const UserProfile = () => {
     { variables: {fb_id: { _eq: fb_id }}, suspend: false }
   );
 
+  const user = data.users.pop();
+console.log(user);
+
   if (loading) {
     return <p>Loading...</p>
   }
@@ -38,8 +41,6 @@ const UserProfile = () => {
   if (error) {
     return <pre>{JSON.stringify(error, null, 2)}</pre>
   }
-
-  const user = data.users.pop();
 
   if (user) {
     return (
