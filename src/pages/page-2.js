@@ -29,7 +29,7 @@ const SecondPage = () => {
 
 	const timeNow = days_passed(new Date(d.getFullYear(), d.getUTCMonth(), d.getUTCDate()));
 
-console.log(getUser().id));
+console.log(getUser().id);
 
 	if (fbId || getUser().id) {
 		return (
