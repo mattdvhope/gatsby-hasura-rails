@@ -1,5 +1,5 @@
 import React from 'react';
-import { getUser, getRailsUser } from "../utils/auth"
+import { getUser, getRailsUser, setRailsUser } from "../utils/auth"
 import { gql, useMutation } from '@apollo/client';
 import UserProfile from "./UserProfile";
 
@@ -31,7 +31,7 @@ const ADD_FB_USER = gql`
 	}
 `;
 
-console.log(getRailsUser);
+console.log(getRailsUser());
 
 const UserRegistration = ({ timeNow }) => {
   const fbUser = getUser();
@@ -54,7 +54,7 @@ const UserRegistration = ({ timeNow }) => {
 					  	 login_time: timeNow
 					  	}
 					  });
-
+				  	setRailsUser(fbUser);
 	      }}/>
 	      <p>Time: {timeNow}</p>
 	      <UserProfile />
