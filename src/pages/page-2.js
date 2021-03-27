@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import UserRegistration from "../components/UserRegistration";
 import { isLoggedIn, getUser, handleLogin } from "../utils/auth";
+import { TimeNow } from "../utils/TimeNow";
 import { GetFbUserProfile } from "../utils/GetFbUserProfile";
 
 const SecondPage = () => {
@@ -14,22 +15,22 @@ const SecondPage = () => {
     }
   });
 
-  const days_passed = (dt) => {
-	  const current = new Date(dt.getTime());
-	  const previous = new Date(2021, 0, 1);
-	  return Math.ceil((current - previous + 1) / 86400000);
-	}
+ //  const days_passed = (dt) => {
+	//   const current = new Date(dt.getTime());
+	//   const previous = new Date(2021, 0, 1);
+	//   return Math.ceil((current - previous + 1) / 86400000);
+	// }
 
-	const d = new Date();
+	// const d = new Date();
 
-	const timeNow = days_passed(new Date(d.getFullYear(), d.getUTCMonth(), d.getUTCDate()));
+	// const timeNow = days_passed(new Date(d.getFullYear(), d.getUTCMonth(), d.getUTCDate()));
 
 	if (getUser().id) {
 		return (
 		  <Layout>
 		    <SEO title="Page two" />
 		    <h3>Hi {getUser().name}!!</h3>
-		    <UserRegistration timeNow={timeNow}/>
+		    <UserRegistration timeNow={TimeNow}/>
 		    <Link to="/">Go back to the homepage</Link>
 		  </Layout>
 		)
