@@ -55,16 +55,19 @@ const UserRegistration = ({ timeNow, fb_id }) => {
 
 	console.log(data);
 	if (!data) {
-		const railsUser = document.getElementById('add-fb-rails-user');
-		console.log(data);
-		railsUser.click();
+		const el = document.getElementById("mainDiv");
+		const railsUser = document.getElementById("addFbRailsUser");
+		console.log(el);
+		console.log(railsUser);
+		// railsUser.click();
 	}
 
   return (
 		<div id="mainDiv">
 	    <div style={{ margin: `2rem auto`, width: `550px` }}>
 	      <span
-	      	id="add-fb-rails-user"
+	      	id="addFbRailsUser"
+	      	style={{ display: `none` }} 
 	      	onClick={e => {
 	      		e.preventDefault();
 				  	addFbUser({
