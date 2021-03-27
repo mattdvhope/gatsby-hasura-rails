@@ -51,6 +51,8 @@ const UserRegistration = ({ timeNow }) => {
 		};
   }); // useEffect
 
+
+
   return (
 		<div id="mainDiv">
 	    <div style={{ margin: `2rem auto`, width: `550px` }}>
