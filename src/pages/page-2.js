@@ -30,7 +30,7 @@ const SecondPage = () => {
 		  <Layout>
 		    <SEO title="Page two" />
 		    <h3>Hi {getUser().name}!!</h3>
-		    <UserRegistration timeNow={TimeNow}/>
+		    <UserRegistration timeNow={TimeNow()}/>
 		    <Link to="/">Go back to the homepage</Link>
 		  </Layout>
 		)
