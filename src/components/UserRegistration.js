@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { getUser } from "../utils/auth"
-import { gql, useQuery, useMutation } from '@apollo/client';
+import { gql, useMutation } from '@apollo/client';
 import UserProfile from "./UserProfile";
 
 const ADD_FB_USER = gql`
@@ -31,16 +31,6 @@ const ADD_FB_USER = gql`
 	}
 `;
 
-const GET_USER = gql`
-	query getUsers($fb_id: String_comparison_exp!) {
-		users(where: { fb_id: $fb_id }) {
-			id
-			name
-			fb_id
-		}
-	}
-`
-
 const ProvideUserProfile = (railsUser) => {
 	if (railsUser) {
 		return <UserProfile/>;
@@ -52,11 +42,6 @@ const ProvideUserProfile = (railsUser) => {
 const UserRegistration = ({ timeNow }) => {
   const fbUser = getUser();
 
-	const { loading, error, data } = useQuery(
-		GET_USER,
-    { variables: {fb_id: { _eq: fbUser.id }}}
-	);
-  
   const [addFbUser] = useMutation(ADD_FB_USER);
 
   const [railsUser, setRailsUser] = useState(false)
