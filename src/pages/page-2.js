@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import UserRegistration from "../components/UserRegistration";
 import { isLoggedIn, getUser, handleLogin } from "../utils/auth";
-import { UserInRails } from "../utils/UserInRails";
+import UserInRails from "../utils/UserInRails";
 import { GetFbUserProfile } from "../utils/GetFbUserProfile";
 
 const SecondPage = () => {
@@ -25,13 +25,12 @@ const SecondPage = () => {
 
 	const timeNow = days_passed(new Date(d.getFullYear(), d.getUTCMonth(), d.getUTCDate()));
 
-console.log(UserInRails(getUser().id))
-
 	if (getUser().id) {
 		return (
 		  <Layout>
 		    <SEO title="Page two" />
 		    <h3>Hi {getUser().name}!!</h3>
+		    <UserInRails fb_id={getUser().id}/>
 		    <UserRegistration timeNow={timeNow}/>
 		    <Link to="/">Go back to the homepage</Link>
 		  </Layout>

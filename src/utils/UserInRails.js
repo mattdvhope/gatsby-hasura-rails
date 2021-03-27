@@ -44,6 +44,8 @@ export const UserInRails = ({ fb_id }) => {
       </div>
     )
   } else {
+    console.log("no user!!!!")
+
     return null;
   }
 }
