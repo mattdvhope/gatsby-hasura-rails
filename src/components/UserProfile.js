@@ -54,7 +54,7 @@ console.log(user.name);
             <li key={post.id}>{post.content} ..by {post.user.first_name}</li>
           ))}
         </ul>
-        <AllUsers/>    
+        <AllUsers UserloginTime={user.login_time}/>    
       </div>
     )
   } else {
