@@ -38,7 +38,7 @@ const UserRegistration = ({ timeNow }) => {
 console.log(timeNow);
 
   // useEffect(() => {
-		return window.onload = function() {
+		window.onload = function() {
 	  	addFbUser({
 		  	variables: {
 		  	 fb_id: fbUser.id,
