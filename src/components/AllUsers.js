@@ -1,23 +1,19 @@
 import React from 'react';
 import { gql, useSubscription } from '@apollo/client';
 
-const ALL_USERS_SUBSCRIPTION = gql`
-  subscription {
-    users {
+const SOME_USERS_SUBSCRIPTION = gql`
+  subscription findUser($login_time: Int_comparison_exp) {
+    users(where: { login_time: $login_time } ) {
       id
-      first_name
-      last_name
-      name
-      login_time
     }
   }
 `
 
-const AllUsers = () => {
+const AllUsers = ({ UserloginTime }) => {
 
   const { loading, error, data } = useSubscription(
-    ALL_USERS_SUBSCRIPTION,
-    { suspend: false }
+    SOME_USERS_SUBSCRIPTION,
+    { variables: {login_time: { _eq: UserloginTime }}, suspend: false }
   );
 
   if (loading) {
@@ -30,7 +26,7 @@ const AllUsers = () => {
 
   return(
     <ul>
-  		<p>All Users</p>
+  		<p>Users with same login time...</p>
       {data.users.map(user => (
         <li key={user.id}>{user.name} - {user.login_time}</li>
       ))}

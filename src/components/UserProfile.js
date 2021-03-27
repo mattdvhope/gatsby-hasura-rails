@@ -44,13 +44,8 @@ const UserProfile = () => {
   if (user) {
     return (
       <div>
-        <div>Posts by {user.name} - {user.login_time}</div>
-        <ul>
-          {user.posts.map(post => (
-            <li key={post.id}>{post.content} ..by {post.user.first_name}</li>
-          ))}
-        </ul>
-        <AllUsers/>    
+        <p>{user.name}, I'm glad you're signed in!!</p>
+        <AllUsers UserloginTime={user.login_time}/>
       </div>
     )
   } else {
