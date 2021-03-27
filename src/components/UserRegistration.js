@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import { getUser } from "../utils/auth"
 import { gql, useQuery, useMutation } from '@apollo/client';
 import UserProfile from "./UserProfile";
@@ -51,20 +51,13 @@ const UserRegistration = ({ timeNow }) => {
   
   const [addFbUser] = useMutation(ADD_FB_USER);
 
-  useEffect(() => {
-  	console.log("data: ", data);
-		if (!data ) {
-			const railsUser = document.getElementById("addFbRailsUser");
-			railsUser.click();
-		}
-  });
+  const [railsUser, setRailsUser] = useState(false)
 
   return (
 		<div id="mainDiv">
 	    <div style={{ margin: `2rem auto`, width: `550px` }}>
-	      <span
+	      <button
 	      	id="addFbRailsUser"
-	      	style={{ display: `none` }} 
 	      	onClick={e => {
 	      		e.preventDefault();
 				  	addFbUser({
@@ -77,9 +70,9 @@ const UserRegistration = ({ timeNow }) => {
 					  	 login_time: timeNow
 					  	}
 					  });
-	      }}/>
-	      <p>Time: {timeNow}</p>
-	      <UserProfile />
+				  	setRailsUser(true);
+		      }}>Yes!!!</button>
+	      {railsUser ? null : <UserProfile/>}
 	    </div>
 	  </div>
   )

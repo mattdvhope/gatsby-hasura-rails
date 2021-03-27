@@ -20,6 +20,7 @@ const SecondPage = () => {
 		  <Layout>
 		    <SEO title="Page two" />
 		    <h3>Hi {getUser().name}!!</h3>
+		    <h3>Do you want to do a Bible Study with someone?</h3>
 		    <UserRegistration timeNow={TimeNow()} />
 		    <Link to="/">Go back to the homepage</Link>
 		  </Layout>
