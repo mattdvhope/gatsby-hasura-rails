@@ -3,7 +3,7 @@ import { gql, useMutation } from '@apollo/client';
 import { getUser } from "../utils/auth";
 
 
-const JoinableUsers = ({ user }) => {
+const JoinableUser = ({ user }) => {
 
   const JoinUsers = () => {
     console.log(getUser().first_name + " clicked " + user.name);
@@ -20,4 +20,4 @@ const JoinableUsers = ({ user }) => {
 
 }
 
-export default JoinableUsers;
+export default JoinableUser;
