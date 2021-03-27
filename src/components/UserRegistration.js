@@ -1,5 +1,5 @@
 import React from 'react';
-import { getUser } from "../utils/auth"
+import { getUser, getRailsUser } from "../utils/auth"
 import { gql, useMutation } from '@apollo/client';
 import UserProfile from "./UserProfile";
 
@@ -31,6 +31,8 @@ const ADD_FB_USER = gql`
 	}
 `;
 
+console.log(getRailsUser);
+
 const UserRegistration = ({ timeNow }) => {
   const fbUser = getUser();
   const [addFbUser, { data }] = useMutation(ADD_FB_USER);
@@ -38,7 +40,9 @@ const UserRegistration = ({ timeNow }) => {
   return (
 		<div id="mainDiv">
 	    <div style={{ margin: `2rem auto`, width: `550px` }}>
-	      <p onClick={e => {
+	      <span
+	      	style={{ display: `none` }} 
+	      	onClick={e => {
 	      		e.preventDefault();
 				  	addFbUser({
 					  	variables: {
@@ -50,7 +54,9 @@ const UserRegistration = ({ timeNow }) => {
 					  	 login_time: timeNow
 					  	}
 					  });
-	      }}>Time: {timeNow}</p>
+
+	      }}/>
+	      <p>Time: {timeNow}</p>
 	      <UserProfile />
 	    </div>
 	  </div>

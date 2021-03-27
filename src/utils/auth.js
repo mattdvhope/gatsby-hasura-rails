@@ -24,3 +24,14 @@ export const logout = callback => {
   setUser({})
   callback()
 }
+
+
+///////// rails user /////////////
+
+export const getRailsUser = () =>
+  isBrowser() && window.localStorage.getItem("fbRailsUser")
+    ? JSON.parse(window.localStorage.getItem("fbRailsUser"))
+    : {}
+
+export const setRailsUser = fbRailsUser => 
+  window.localStorage.setItem("fbRailsUser", JSON.stringify(fbRailsUser))
