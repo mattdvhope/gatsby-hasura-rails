@@ -6,7 +6,7 @@ import { getUser } from "../utils/auth";
 const JoinableUser = ({ user }) => {
 
   const JoinUsers = () => {
-    console.log(getUser().first_name + " clicked " + user.name);
+    console.log(getUser().name + " clicked " + user.name);
   }
 
   return(
