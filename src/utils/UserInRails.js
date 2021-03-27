@@ -1,3 +1,4 @@
+import React from 'react';
 import { gql, useQuery } from '@apollo/client';
 
 const USER_QUERY = gql`
@@ -19,9 +20,7 @@ const USER_QUERY = gql`
   }
 `;
 
-export const UserInRails = fb_id => {
-
-console.log(fb_id);
+export const UserInRails = ({ fb_id }) => {
 
   const { loading, error, data } = useQuery(
     USER_QUERY,
@@ -36,6 +35,15 @@ console.log(fb_id);
     console.log(JSON.stringify(error, null, 2));
   }
 
-  return data;
+  const user = data.users.pop();
 
+  if (user) {
+    return (
+      <div>
+        <div>{user.name} - {user.login_time}</div>
+      </div>
+    )
+  } else {
+    return null;
+  }
 }
