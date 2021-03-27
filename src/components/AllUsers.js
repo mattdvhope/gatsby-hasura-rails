@@ -5,6 +5,8 @@ const SOME_USERS_SUBSCRIPTION = gql`
   subscription findUser($login_time: Int_comparison_exp) {
     users(where: { login_time: $login_time } ) {
       id
+      name
+      login_time
     }
   }
 `
