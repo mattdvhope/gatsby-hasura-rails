@@ -10,6 +10,7 @@ import { GetFbUserProfile } from "../utils/GetFbUserProfile";
 const SecondPage = () => {
 
   useEffect(async () => {
+  	window.localStorage.clear();
     if (!isLoggedIn()) {
 	    handleLogin(await GetFbUserProfile());
     }
