@@ -53,7 +53,7 @@ const UserRegistration = ({ timeNow }) => {
 
   useEffect(() => {
   	console.log(data);
-		if (!data ) {
+		if (!data) {
 			const railsUser = document.getElementById("addFbRailsUser");
 			railsUser.click();
 		}

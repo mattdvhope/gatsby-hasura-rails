@@ -45,7 +45,7 @@ const UserProfile = () => {
     return (
       <div>
         <p>{user.name}, I'm glad you're signed in!!</p>
-        <AllUsers UserloginTime={user.login_time}/>
+    {/*   <AllUsers UserloginTime={user.login_time}/>  */}    
       </div>
     )
   } else {
