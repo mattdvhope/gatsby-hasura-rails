@@ -40,8 +40,10 @@ const UserProfile = () => {
   }
 
   let user = data.users[0];
+console.log(user);
 
-  if (user) {
+  if (user ) {
+console.log(user);
     return (
       <div>
         <br/>
