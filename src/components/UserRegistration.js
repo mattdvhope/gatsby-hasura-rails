@@ -41,6 +41,15 @@ const GET_USER = gql`
 	}
 `
 
+const ProvideUserProfile = (railsUser) => {
+	console.log(railsUser);
+	if (railsUser) {
+		return <UserProfile/>;
+	} else {
+		return null;
+	}
+};
+
 const UserRegistration = ({ timeNow }) => {
   const fbUser = getUser();
 
@@ -72,7 +81,7 @@ const UserRegistration = ({ timeNow }) => {
 					  });
 				  	setRailsUser(true);
 		      }}>Yes!!!</button>
-	      {railsUser ? null : <UserProfile/>}
+	      {ProvideUserProfile(railsUser)}
 	    </div>
 	  </div>
   )
