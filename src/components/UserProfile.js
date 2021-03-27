@@ -43,7 +43,7 @@ console.log(fb_id)
 
 console.log(data);
 
-  const user = [...data.users][0];
+  const user = data.users[0];
 
 console.log(user);
 
