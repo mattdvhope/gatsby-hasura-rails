@@ -1,5 +1,6 @@
 import React from 'react';
 import { gql, useSubscription } from '@apollo/client';
+import { getUser } from "../utils/auth";
 
 const SOME_USERS_SUBSCRIPTION = gql`
   subscription findUser($login_time: Int_comparison_exp) {
@@ -27,13 +28,17 @@ const AllUsers = ({ UserloginTime }) => {
     return <pre>{JSON.stringify(error, null, 2)}</pre>
   }
 
+  const JoinUsers = user => {
+    alert("You, "  + getUser().first_name + " have joined with " + user.first_name + ".")
+  }
+
   return(
     <ul>
   		<p>Users with same login time...</p>
       {data.users.map(user => (
         <li
           key={user.id}
-          onClick={console.log("clicked " + user.first_name)}
+          onClick={JoinUsers(user)}
         >
           {user.name} - {user.login_time}
         </li>
