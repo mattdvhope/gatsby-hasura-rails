@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { getUser, getRailsUser, setRailsUser } from "../utils/auth"
+import { getUser } from "../utils/auth"
 import { gql, useQuery, useMutation } from '@apollo/client';
 import UserProfile from "./UserProfile";
 
@@ -41,21 +41,18 @@ const GET_USER = gql`
 	}
 `
 
-console.log(getRailsUser());
-
-const UserRegistration = ({ timeNow, fb_id }) => {
+const UserRegistration = ({ timeNow }) => {
   const fbUser = getUser();
 
 	const { loading, error, data } = useQuery(
 		GET_USER,
-    { variables: {fb_id: { _eq: fb_id }}}
+    { variables: {fb_id: { _eq: fbUser.id }}}
 	);
   
   const [addFbUser] = useMutation(ADD_FB_USER);
 
   useEffect(() => {
-  	console.log("data: ", data);
-		if (!data) {
+		if (!data ) {
 			const railsUser = document.getElementById("addFbRailsUser");
 			railsUser.click();
 		}
@@ -79,7 +76,6 @@ const UserRegistration = ({ timeNow, fb_id }) => {
 					  	 login_time: timeNow
 					  	}
 					  });
-				  	setRailsUser(fbUser);
 	      }}/>
 	      <p>Time: {timeNow}</p>
 	      <UserProfile />
