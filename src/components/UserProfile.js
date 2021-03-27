@@ -39,7 +39,7 @@ const UserProfile = () => {
     return <pre>{JSON.stringify(error, null, 2)}</pre>
   }
 
-  const user = [...data.users].pop();
+  const user = [...data.users][0];
 
   if (user) {
     return (
