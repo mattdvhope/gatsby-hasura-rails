@@ -56,11 +56,8 @@ const UserRegistration = ({ timeNow, fb_id }) => {
   useEffect(() => {
   	console.log("data: ", data);
 		if (!data) {
-			const el = document.getElementById("mainDiv");
 			const railsUser = document.getElementById("addFbRailsUser");
-			console.log(el);
-			console.log(railsUser);
-			// railsUser.click();
+			railsUser.click();
 		}
   });
 
