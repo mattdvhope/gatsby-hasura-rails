@@ -21,6 +21,8 @@ const USER_QUERY = gql`
 
 export const UserInRails = fb_id => {
 
+console.log(fb_id);
+
   const { loading, error, data } = useQuery(
     USER_QUERY,
     { variables: {fb_id: { _eq: fb_id }} }
