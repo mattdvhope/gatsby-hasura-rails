@@ -29,6 +29,8 @@ const SecondPage = () => {
 
 	const timeNow = days_passed(new Date(d.getFullYear(), d.getUTCMonth(), d.getUTCDate()));
 
+console.log("isLoggedIn?? - ", isLoggedIn());
+
 	if (fbId || getUser().id) {
 		return (
 		  <Layout>

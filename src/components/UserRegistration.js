@@ -35,9 +35,7 @@ const UserRegistration = ({ timeNow }) => {
   const fbUser = getUser();
   const [addFbUser, { data }] = useMutation(ADD_FB_USER);
 
-console.log(timeNow);
-
-  // useEffect(() => {
+  useEffect(() => {
 		window.onload = function() {
 	  	addFbUser({
 		  	variables: {
@@ -51,7 +49,7 @@ console.log(timeNow);
 		  });
 		  console.log("inside useEffect, after addFbUser")
 		};
-  // }); // useEffect
+  }); // useEffect
 
   return (
 		<div id="mainDiv">

@@ -25,7 +25,6 @@ const USER_SUBSCRIPTION = gql`
 const UserProfile = () => {
 
   const fb_id = getUser().id;
-console.log(fb_id);
 
   const { loading, error, data } = useSubscription(
     USER_SUBSCRIPTION,
