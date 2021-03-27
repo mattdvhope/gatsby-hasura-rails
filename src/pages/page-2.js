@@ -1,23 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import UserRegistration from "../components/UserRegistration"
-import { isLoggedIn, getUser, handleLogin } from "../utils/auth"
+import UserRegistration from "../components/UserRegistration";
+import { isLoggedIn, getUser, handleLogin } from "../utils/auth";
+import { UserInRails } from "../utils/UserInRails";
 import { GetFbUserProfile } from "../utils/GetFbUserProfile";
 
 const SecondPage = () => {
 
-	// const [fbId, setFbId] = useState(null);
-	// const [name, setName] = useState(null);
-
   useEffect(async () => {
     if (!isLoggedIn()) {
 	    handleLogin(await GetFbUserProfile());
-    	// setFbId(getUser().id)
-    	// setName(getUser().name)
     }
-  }); // useEffect
+  });
 
   const days_passed = (dt) => {
 	  const current = new Date(dt.getTime());
@@ -29,7 +25,7 @@ const SecondPage = () => {
 
 	const timeNow = days_passed(new Date(d.getFullYear(), d.getUTCMonth(), d.getUTCDate()));
 
-console.log(getUser().id);
+console.log(UserInRails(fb_id))
 
 	if (getUser().id) {
 		return (
