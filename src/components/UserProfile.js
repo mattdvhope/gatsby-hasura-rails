@@ -40,6 +40,7 @@ const UserProfile = () => {
   }
 
   const user = data.users[0];
+console.log(user);
 
   if (user) {
 console.log(user.name);
