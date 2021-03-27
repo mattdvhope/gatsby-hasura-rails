@@ -53,7 +53,7 @@ const UserRegistration = ({ timeNow, fb_id }) => {
   
   const [addFbUser] = useMutation(ADD_FB_USER);
 
-  useEffect(async () => {
+  useEffect(() => {
   	console.log("data: ", data);
 		if (!data) {
 			const el = document.getElementById("mainDiv");
