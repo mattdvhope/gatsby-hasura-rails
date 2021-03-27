@@ -37,7 +37,7 @@ const UserRegistration = ({ timeNow }) => {
 
 console.log(timeNow);
 
-  useEffect(() => {
+  // useEffect(() => {
 		return window.onload = function() {
 	  	addFbUser({
 		  	variables: {
@@ -51,7 +51,7 @@ console.log(timeNow);
 		  });
 		  console.log("inside useEffect, after addFbUser")
 		};
-  }); // useEffect
+  // }); // useEffect
 
   return (
 		<div id="mainDiv">
