@@ -39,10 +39,9 @@ const UserProfile = () => {
     return <pre>{JSON.stringify(error, null, 2)}</pre>
   }
 
-  const user = data.users[0];
+  let user = data.users[0];
 
-  if (data) {
-console.log(data.users[0].name);
+  if (user) {
     return (
       <div>
         <br/>
