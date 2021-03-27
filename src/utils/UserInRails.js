@@ -34,6 +34,6 @@ export const UserInRails = fb_id => {
     console.log(JSON.stringify(error, null, 2));
   }
 
-  return data.users;
+  return data;
 
 }
