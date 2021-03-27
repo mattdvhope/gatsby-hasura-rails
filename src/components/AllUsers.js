@@ -11,6 +11,8 @@ const SOME_USERS_SUBSCRIPTION = gql`
 
 const AllUsers = ({ UserloginTime }) => {
 
+console.log(UserloginTime);
+
   const { loading, error, data } = useSubscription(
     SOME_USERS_SUBSCRIPTION,
     { variables: {login_time: { _eq: UserloginTime }}, suspend: false }
@@ -23,6 +25,8 @@ const AllUsers = ({ UserloginTime }) => {
   if (error) {
     return <pre>{JSON.stringify(error, null, 2)}</pre>
   }
+
+console.log(data);
 
   return(
     <ul>
