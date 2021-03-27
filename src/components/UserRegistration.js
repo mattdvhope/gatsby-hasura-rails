@@ -31,24 +31,29 @@ const ADD_FB_USER = gql`
 	}
 `;
 
-const GET_USERS = gql`
-	query getUsers {
-		users {
+const GET_USER = gql`
+	query getUsers($fb_id: String_comparison_exp!) {
+		users(where: { fb_id: $fb_id }) {
 			id
+			name
+			fb_id
 		}
 	}
-
 `
 
 console.log(getRailsUser());
 
-const UserRegistration = ({ timeNow }) => {
+const UserRegistration = ({ timeNow, fb_id }) => {
   const fbUser = getUser();
 
-	const { loading, error, data } = useQuery(GET_USERS);
+	const { loading, error, data } = useQuery(
+		GET_USER,
+    { variables: {fb_id: { _eq: fb_id }}}
+	);
+  
   const [addFbUser] = useMutation(ADD_FB_USER);
 
-console.log(data);
+	console.log(data);
 
   return (
 		<div id="mainDiv">
