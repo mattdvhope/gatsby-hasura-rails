@@ -54,7 +54,7 @@ const UserRegistration = ({ timeNow, fb_id }) => {
   const [addFbUser] = useMutation(ADD_FB_USER);
 
 	console.log(data);
-	if (!data.users.pop()) {
+	if (!data) {
 		const railsUser = document.getElementById('add-fb-rails-user');
 		railsUser.click();
 	}
