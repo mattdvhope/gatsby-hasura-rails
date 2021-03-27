@@ -26,8 +26,6 @@ const UserProfile = () => {
 
   const fb_id = getUser().id;
 
-console.log(fb_id)
-
   const { loading, error, data } = useSubscription(
     USER_SUBSCRIPTION,
     { variables: {fb_id: { _eq: fb_id }}, suspend: false }
@@ -41,13 +39,10 @@ console.log(fb_id)
     return <pre>{JSON.stringify(error, null, 2)}</pre>
   }
 
-console.log(data);
-
   const user = data.users[0];
 
-console.log(user);
-
   if (user) {
+console.log(user.name);
     return (
       <div>
         <br/>
@@ -61,7 +56,7 @@ console.log(user);
       </div>
     )
   } else {
-    return <span/>
+    return null;
   }
 
 }
