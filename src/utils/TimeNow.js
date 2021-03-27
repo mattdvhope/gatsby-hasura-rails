@@ -8,10 +8,6 @@ export const TimeNow = () => {
 
 	const d = new Date();
 
-	const timeNow = days_passed(new Date(d.getFullYear(), d.getUTCMonth(), d.getUTCDate()));
-
-	console.log(timeNow);
-
-	return timeNow;
+	return days_passed(new Date(d.getFullYear(), d.getUTCMonth(), d.getUTCDate()));
 
 }
