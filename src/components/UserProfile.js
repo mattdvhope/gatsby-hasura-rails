@@ -45,6 +45,8 @@ console.log(data);
 
   const user = [...data.users][0];
 
+console.log(user);
+
   if (user) {
     return (
       <div>
