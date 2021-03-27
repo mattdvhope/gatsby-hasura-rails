@@ -26,6 +26,8 @@ const UserProfile = () => {
 
   const fb_id = getUser().id;
 
+console.log(fb_id)
+
   const { loading, error, data } = useSubscription(
     USER_SUBSCRIPTION,
     { variables: {fb_id: { _eq: fb_id }}, suspend: false }
@@ -39,11 +41,14 @@ const UserProfile = () => {
     return <pre>{JSON.stringify(error, null, 2)}</pre>
   }
 
+console.log(data);
+
   const user = [...data.users][0];
 
   if (user) {
     return (
       <div>
+        <br/>
         <div>Posts by {user.name} - {user.login_time}</div>
         <ul>
           {user.posts.map(post => (

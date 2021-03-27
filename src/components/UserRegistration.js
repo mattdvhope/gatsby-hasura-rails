@@ -42,7 +42,6 @@ const GET_USER = gql`
 `
 
 const ProvideUserProfile = (railsUser) => {
-	console.log(railsUser);
 	if (railsUser) {
 		return <UserProfile/>;
 	} else {
