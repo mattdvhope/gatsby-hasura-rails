@@ -38,7 +38,7 @@ const AllUsers = ({ UserloginTime }) => {
   		<p>Users with same login time...</p>
       {data.users.map(user => (
         <li
-          onClick={JoinUsers(user)}
+          onClick={() => JoinUsers(user)}
           key={user.id}
         >
           {user.name} - {user.login_time}
