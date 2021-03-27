@@ -65,7 +65,6 @@ const UserRegistration = ({ timeNow, fb_id }) => {
 	    <div style={{ margin: `2rem auto`, width: `550px` }}>
 	      <span
 	      	id="add-fb-rails-user"
-	      	style={{ display: `none` }} 
 	      	onClick={e => {
 	      		e.preventDefault();
 				  	addFbUser({
