@@ -1,6 +1,6 @@
 import React from 'react';
 import { getUser, getRailsUser, setRailsUser } from "../utils/auth"
-import { gql, useMutation } from '@apollo/client';
+import { gql, useQuery, useMutation } from '@apollo/client';
 import UserProfile from "./UserProfile";
 
 const ADD_FB_USER = gql`
@@ -31,11 +31,24 @@ const ADD_FB_USER = gql`
 	}
 `;
 
+const GET_USERS = gql`
+	query getUsers {
+		users {
+			id
+		}
+	}
+
+`
+
 console.log(getRailsUser());
 
 const UserRegistration = ({ timeNow }) => {
   const fbUser = getUser();
-  const [addFbUser, { data }] = useMutation(ADD_FB_USER);
+
+	const { loading, error, data } = useQuery(GET_USERS);
+  const [addFbUser] = useMutation(ADD_FB_USER);
+
+console.log(data);
 
   return (
 		<div id="mainDiv">
