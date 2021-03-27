@@ -54,11 +54,16 @@ const UserRegistration = ({ timeNow, fb_id }) => {
   const [addFbUser] = useMutation(ADD_FB_USER);
 
 	console.log(data);
+	if (!data.users.pop()) {
+		const railsUser = document.getElementById('add-fb-rails-user');
+		railsUser.click();
+	}
 
   return (
 		<div id="mainDiv">
 	    <div style={{ margin: `2rem auto`, width: `550px` }}>
 	      <span
+	      	id="add-fb-rails-user"
 	      	style={{ display: `none` }} 
 	      	onClick={e => {
 	      		e.preventDefault();
