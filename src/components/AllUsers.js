@@ -6,14 +6,13 @@ const SOME_USERS_SUBSCRIPTION = gql`
     users(where: { login_time: $login_time } ) {
       id
       name
+      first_name
       login_time
     }
   }
 `
 
 const AllUsers = ({ UserloginTime }) => {
-
-console.log(UserloginTime);
 
   const { loading, error, data } = useSubscription(
     SOME_USERS_SUBSCRIPTION,
@@ -28,13 +27,16 @@ console.log(UserloginTime);
     return <pre>{JSON.stringify(error, null, 2)}</pre>
   }
 
-console.log(data);
-
   return(
     <ul>
   		<p>Users with same login time...</p>
       {data.users.map(user => (
-        <li key={user.id}>{user.name} - {user.login_time}</li>
+        <li
+          key={user.id}
+          onClick={console.log("clicked " + user.first_name)}
+        >
+          {user.name} - {user.login_time}
+        </li>
       ))}
     </ul>
   )
