@@ -40,10 +40,9 @@ const UserProfile = () => {
   }
 
   const user = data.users[0];
-console.log(data);
 
   if (data) {
-console.log(data);
+console.log(data.users[0].name);
     return (
       <div>
         <br/>
