@@ -7,8 +7,7 @@ const USER_SUBSCRIPTION = gql`
   subscription($fb_id: String_comparison_exp!) {
     users(where: { fb_id: $fb_id }) {
       id
-      first_name
-      last_name
+      name
       fb_id
       posts {
         id
