@@ -9,6 +9,7 @@ const SOME_USERS_SUBSCRIPTION = gql`
       name
       first_name
       login_time
+      fb_id
     }
   }
 `
@@ -29,7 +30,7 @@ const AllUsers = ({ UserloginTime }) => {
   }
 
   const JoinUsers = user => {
-    alert("You, "  + getUser().first_name + " have joined with " + user.first_name + ".")
+    console.log("clicked " + user.first_name);
   }
 
   return(
@@ -37,8 +38,8 @@ const AllUsers = ({ UserloginTime }) => {
   		<p>Users with same login time...</p>
       {data.users.map(user => (
         <li
-          key={user.id}
           onClick={JoinUsers(user)}
+          key={user.id}
         >
           {user.name} - {user.login_time}
         </li>
