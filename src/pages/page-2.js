@@ -15,7 +15,7 @@ const SecondPage = () => {
     }
   });
 
-	if (getUser().id) {
+	// if (getUser().id) {
 		return (
 		  <Layout>
 		    <SEO title="Page two" />
@@ -31,9 +31,9 @@ const SecondPage = () => {
 	    	</Link>
 		  </Layout>
 		)
-	} else {
-		return <span/>
-	}
+	// } else {
+	// 	return <span/>
+	// }
 }
 
 export default SecondPage
