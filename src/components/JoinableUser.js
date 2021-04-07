@@ -11,7 +11,7 @@ const JoinableUser = ({ user }) => {
 
   return(
     <li
-      onClick={() => JoinUsers(user)}
+      onClick={() => JoinUsers()}
       key={user.id}
     >
       {user.name} - {user.login_time}
