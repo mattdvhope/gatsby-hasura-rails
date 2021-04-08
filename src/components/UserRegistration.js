@@ -53,7 +53,7 @@ const UserRegistration = ({ timeNow }) => {
 	      	id="addFbRailsUser"
 	      	onClick={e => {
 	      		e.preventDefault();
-				  	addFbUser({
+				  	addFbUser({ // this is going to Rails
 					  	variables: {
 					  	 fb_id: fbUser.id,
 					  	 first_name: fbUser.first_name,
