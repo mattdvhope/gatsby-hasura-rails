@@ -18,35 +18,29 @@ const SecondPage = () => {
     }
   });
 
-const ProvideGreeting = (FbUser) => {
-	if (FbUser) {
-		return <h3>Hi {getUser().name}!!</h3>;
-	} else {
-		return <h3>Waiting for greeting....</h3>;
-	}
-};
+	const ProvideGreeting = (FbUser) => {
+		if (FbUser) {
+			return <h3>Hi {getUser().name}!!</h3>;
+		} else {
+			return <h3>Waiting for greeting....</h3>;
+		}
+	};
 
-console.log("FbUser: ", FbUser);
-
-	// if (getUser().id) {
-		return (
-		  <Layout>
-		    <SEO title="Page two" />
-		    {ProvideGreeting(FbUser)}
-		    <h3>Do you want to do a Bible Study with someone?</h3>
-		    <UserRegistration timeNow={TimeNow()} />
-		    <Link
-		    	to="/"
-		    	onClick={e => {
-	      		localStorage.clear();
-		      }}>
-	    		Go back to the homepage
-	    	</Link>
-		  </Layout>
-		)
-	// } else {
-	// 	return <span/>
-	// }
+	return (
+	  <Layout>
+	    <SEO title="Page two" />
+	    {ProvideGreeting(FbUser)}
+	    <h3>Do you want to do a Bible Study with someone?</h3>
+	    <UserRegistration timeNow={TimeNow()} />
+	    <Link
+	    	to="/"
+	    	onClick={e => {
+      		localStorage.clear();
+	      }}>
+    		Go back to the homepage
+    	</Link>
+	  </Layout>
+	)
 }
 
 export default SecondPage
