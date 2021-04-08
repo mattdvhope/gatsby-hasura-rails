@@ -3,7 +3,7 @@ import { getUser } from "../utils/auth"
 import { gql, useMutation } from '@apollo/client';
 import UserProfile from "./UserProfile";
 
-// This graphql data is added to Rails...
+// This graphql data is added to Rails via Hasura...
 const ADD_FB_USER = gql`
 	mutation addUser(
 	  $fb_id: String!
