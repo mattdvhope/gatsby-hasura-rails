@@ -3,6 +3,7 @@ import { gql, useSubscription } from '@apollo/client';
 import { getUser } from "../utils/auth";
 import JoinableUser from "./JoinableUser";
 
+// This graphql data comes from Rails...
 const SOME_USERS_SUBSCRIPTION = gql`
   subscription findUser($login_time: Int_comparison_exp) {
     users(where: { login_time: $login_time } ) {
