@@ -3,6 +3,7 @@ import { gql, useSubscription } from '@apollo/client';
 import { getUser } from "../utils/auth";
 import AllUsers from "./AllUsers"
 
+// This graphql data comes from Rails...
 const USER_SUBSCRIPTION = gql`
   subscription($fb_id: String_comparison_exp!) {
     users(where: { fb_id: $fb_id }) {
