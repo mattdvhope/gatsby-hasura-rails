@@ -5,13 +5,13 @@ import { getUser } from "../utils/auth";
 
 const JoinableUser = ({ user }) => {
 
-  const JoinUsers = () => {
+  const JoinTwoUsers = () => {
     console.log(getUser().name + " clicked " + user.name);
   }
 
   return(
     <li
-      onClick={() => JoinUsers()}
+      onClick={() => JoinTwoUsers()}
       key={user.id}
     >
       {user.name} - {user.login_time}
