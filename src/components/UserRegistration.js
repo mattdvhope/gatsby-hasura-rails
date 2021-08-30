@@ -54,7 +54,7 @@ const UserRegistration = ({ timeNow }) => {
 	      	id="addFbRailsUser"
 	      	onClick={e => {
 	      		e.preventDefault();
-				  	addFbUser({ // this is going to Rails
+				  	addFbUser({ // this is going to Hasura (Actions for 'registerUser'), which in turn is going to the Rails 'Handler' in Actions
 					  	variables: {
 					  	 fb_id: fbUser.id,
 					  	 first_name: fbUser.first_name,
