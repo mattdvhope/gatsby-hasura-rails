@@ -12,7 +12,7 @@ const IndexPage = () => {
       <a
         href={FbLoginURL()}
       >
-        Login with Facebook 
+        Login with Facebook
       </a>
     </Layout>
   )
